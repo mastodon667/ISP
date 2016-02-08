@@ -125,11 +125,9 @@ class InferencePanel(BoxLayout):
         ppDistri.open()
 
     def step(self, choices):
-        codes = list()
         ch_new = self.choices.copy()
         for course in choices:
             ch_new[course.code] = course
-            codes.append(course.code)
         programme = self.sat(choices)
         self.propagate(programme)
         pr_new, un_new = self.split_courses(programme.get_all_courses(), ch_new.keys())
