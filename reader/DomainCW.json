@@ -1,0 +1,805 @@
+{
+  "opleiding": {
+    "naam": "Master_in_de_ingenieurswetenschappen_computerwetenschappen",
+    "fases": 2,
+    "min_studiepunten": 120,
+    "max_studiepunten": 126,
+    "vakken": {
+      "verplicht": [
+        {
+          "code": "H04I4A",
+          "fases": [1],
+          "naam": "Gedistribueerde_Systemen",
+          "punten": 6,
+          "semester": 1
+        },
+        {
+          "code": "G0B23A",
+          "fases": [1],
+          "naam": "Modellering_van_complexe_systemen",
+          "punten": 6,
+          "semester": 1
+        },
+        {
+          "code": "H09B5A",
+          "fases": [1],
+          "naam": "Software_architectuur",
+          "punten": 6,
+          "semester": 2
+        },
+        {
+          "code": "H04L5A",
+          "fases": [2],
+          "naam": "Vergelijkende_studie_van_imperatieve_programmeertalen",
+          "punten": 6,
+          "semester": 1
+        },
+        {
+          "code": "H04J4A",
+          "fases": [2],
+          "naam": "Masterproef",
+          "punten": 24,
+          "semester": 3
+        }
+      ],
+      "keuze": []
+    },
+    "bachelor_verbredend": [
+      {
+        "naam": "Bachelor_Ingenieurswetenschappen",
+        "vakken": {
+          "verplicht": [
+            {
+            "code": "H04G1B",
+            "fases": [1],
+            "naam": "Besturingssystemen",
+            "punten": 3,
+            "semester": 1
+            },
+            {
+            "code": "H04H5B",
+            "fases": [1],
+            "naam": "Studie_van_declaratieve_talen",
+            "punten": 4,
+            "semester": 1
+            },
+            {
+            "code": "H04J9B",
+            "fases": [1],
+            "naam": "Ontwerp_van_softwaresystemen",
+            "punten": 6,
+            "semester": 1
+            },
+            {
+            "code": "H04H0B",
+            "fases": [1],
+            "naam": "Fundamenten_voor_de_computerwetenschappen",
+            "punten": 5,
+            "semester": 2
+            }
+          ],
+          "keuze": []
+        }
+      },
+      {
+        "naam": "Bachelor_Informatica",
+        "vakken": {
+          "verplicht": [
+            {
+            "code": "H01F2A",
+            "fases": [1],
+            "naam": "Bedrijfskunde_en_Entrepreneurship",
+            "punten": 6,
+            "semester": 1
+            },
+            {
+            "code": "G0Q57A",
+            "fases": [1],
+            "naam": "Modellering_en_simulatie",
+            "punten": 6,
+            "semester": 1
+            },
+            {
+            "code": "H01L1A",
+            "fases": [1],
+            "naam": "Digitale_elektronica_en_processoren",
+            "punten": 6,
+            "semester": 2
+            }
+          ],
+          "keuze": []
+        }
+      }
+    ],
+    "verdere_specialisatie": {
+      "min_studiepunten": 18,
+      "max_studiepunten": 126,
+      "vakken": {
+        "verplicht": [],
+        "keuze": [
+          {
+            "code": "H05U5A",
+            "fases": [1],
+            "naam": "Capita_selecta_ingenieurswetenschappen_I_1_Athens_Summer_Course",
+            "punten": 3,
+            "semester": 1
+          }
+        ,
+          {
+            "code": "H05U6A",
+            "fases": [1],
+            "naam": "Capita_selecta_ingenieurswetenschappen_I_2_Athens_Summer_Course",
+            "punten": 3,
+            "semester": 2
+          }
+        ,
+          {
+            "code": "H04G9B",
+            "fases": [1, 2],
+            "naam": "Compilerconstructie",
+            "punten": 5,
+            "semester": 1
+          }
+        ,
+          {
+            "code": "H04I9A",
+            "fases": [2],
+            "naam": "Industriele_stage_Computerwetenschappen_Industrial_Internship_Computer_Science",
+            "punten": 6,
+            "semester": 1
+          }
+        ,
+          {
+            "code": "H04K9A",
+            "fases": [2],
+            "naam": "Capita_selecta_ingenieurswetenschappen_II_1_Athens_Summer_Course",
+            "punten": 3,
+            "semester": 1
+          }
+        ,
+          {
+            "code": "H05U7A",
+            "fases": [2],
+            "naam": "Capita_selecta_ingenieurswetenschappen_II_2_Athens_Summer_Course",
+            "punten": 3,
+            "semester": 2
+          }
+        ]
+      }
+    },
+    "avo": {
+      "min_studiepunten": 12,
+      "max_studiepunten": 14,
+      "vakken": {
+        "verplicht": [],
+        "keuze": [
+          {
+            "code": "H09P4A",
+            "fases": [
+              1,
+              2
+            ],
+            "naam": "Engineering_and_Entrepreneurship",
+            "punten": 6,
+            "semester": 2
+          },
+          {
+            "code": "H04X2A",
+            "fases": [2],
+            "naam": "Project_Management",
+            "punten": 3,
+            "semester": 2
+          },
+          {
+            "code": "S0C78B",
+            "fases": [1],
+            "naam": "Usability_Design",
+            "punten": 6,
+            "semester": 2
+          },
+          {
+            "code": "H00K1A",
+            "fases": [
+              1,
+              2
+            ],
+            "naam": "Engineering_Economy",
+            "punten": 3,
+            "semester": 1
+          },
+          {
+            "code": "H04G0A",
+            "fases": [
+              1,
+              2
+            ],
+            "naam": "Bedrijfservaring_Computerwetenschappen_Industrial_Experience_Computer_Science",
+            "punten": 3,
+            "semester": 1
+          },
+          {
+            "code": "D0R19A",
+            "fases": [
+              1,
+              2
+            ],
+            "naam": "Simulation_Theory_and_Applications",
+            "punten": 6,
+            "semester": 1
+          },
+          {
+            "code": "S0E06A",
+            "fases": [
+              1,
+              2
+            ],
+            "naam": "Interdisciplinary_Perspectives_on_Development_and_Cultures",
+            "punten": 4,
+            "semester": 1
+          },
+          {
+            "code": "G0O00A",
+            "fases": [
+              1,
+              2
+            ],
+            "naam": "Statistische_modellen_and_data_analyse",
+            "punten": 6,
+            "semester": 2
+          },
+          {
+            "code": "H02J6A",
+            "fases": [
+              1,
+              2
+            ],
+            "naam": "Milieuproblemen_en_technieken",
+            "punten": 3,
+            "semester": 2
+          },
+          {
+            "code": "D0I69A",
+            "fases": [
+              1,
+              2
+            ],
+            "naam": "ICT_Service_Management",
+            "punten": 6,
+            "semester": 2
+          },
+          {
+            "code": "H04D8A",
+            "fases": [
+              1,
+              2
+            ],
+            "naam": "Expressievaardigheid_in_de_technische_bedrijfsomgeving",
+            "punten": 3,
+            "semester": 2
+          },
+          {
+            "code": "H04E0A",
+            "fases": [
+              1,
+              2
+            ],
+            "naam": "Plichtenleer_van_de_ingenieur",
+            "punten": 3,
+            "semester": 2
+          },
+          {
+            "code": "C00M0A",
+            "fases": [
+              1,
+              2
+            ],
+            "naam": "Recht_van_de_intellectuele_eigendom",
+            "punten": 3,
+            "semester": 2
+          },
+          {
+            "code": "G0B01A",
+            "fases": [
+              1,
+              2
+            ],
+            "naam": "Intellectual_Property_Management",
+            "punten": 4,
+            "semester": 2
+          },
+          {
+            "code": "P00H0A",
+            "fases": [
+              1,
+              2
+            ],
+            "naam": "Psychologie_miv_psychologie_van_de_waarneming",
+            "punten": 3,
+            "semester": 2
+          },
+          {
+            "code": "H04M8A",
+            "fases": [
+              1,
+              2
+            ],
+            "naam": "Interdisciplinair_college_duurzame_ontwikkeling",
+            "punten": 3,
+            "semester": 2
+          },
+          {
+            "code": "W0AG8A",
+            "fases": [
+              1,
+              2
+            ],
+            "naam": "Philosophy_of_Science_Advanced_Course",
+            "punten": 4,
+            "semester": 2
+          },
+          {
+            "code": "G0B16A",
+            "fases": [1,2],
+            "naam": "Robust_Statistics",
+            "punten": 6,
+            "semester": 2
+          },
+          {
+            "code": "G0B68A",
+            "fases": [
+              1,
+              2
+            ],
+            "naam": "Experimental_Design",
+            "punten": 4,
+            "semester": 2
+          },
+          {
+            "code": "G0K34A",
+            "fases": [
+              1,
+              2
+            ],
+            "naam": "Geschiedenis_van_de_informatica",
+            "punten": 4,
+            "semester": 2
+          },
+          {
+            "code": "C07I6A",
+            "fases": [
+              1,
+              2
+            ],
+            "naam": "ICT_recht",
+            "punten": 4,
+            "semester": 2
+          },
+          {
+            "code": "H0T39A",
+            "fases": [
+              1,
+              2
+            ],
+            "naam": "Entrepreneurship_in_de_praktijk_in_practice",
+            "punten": 3,
+            "semester": 2
+          },
+          {
+            "code": "W0AE0A",
+            "fases": [
+              1,
+              2
+            ],
+            "naam": "Lessen_voor_de_21ste_eeuw",
+            "punten": 4,
+            "semester": 3
+          },
+          {
+            "code": "S0B88A",
+            "fases": [
+              1,
+              2
+            ],
+            "naam": "Genderstudies",
+            "punten": 4,
+            "semester": 3
+          },
+          {
+            "code": "H04B3A",
+            "fases": [
+              1,
+              2
+            ],
+            "naam": "Engels_in_de_bedrijfsomgeving",
+            "punten": 3,
+            "semester": 3
+          },
+          {
+            "code": "H04B4A",
+            "fases": [
+              1,
+              2
+            ],
+            "naam": "Frans_in_de_bedrijfsomgeving",
+            "punten": 3,
+            "semester": 3
+          },
+          {
+            "code": "G0Q91A",
+            "fases": [
+              1,
+              2
+            ],
+            "naam": "Wetenschapscommunicatie",
+            "punten": 5,
+            "semester": 3
+          }
+        ]
+      }
+    },
+    "specialisaties": [
+      {
+        "naam": "Gedistribueerde_Systemen",
+        "vakken": {
+          "verplicht": [
+            {
+              "code": "H02H4A",
+              "fases": [1],
+              "naam": "Multi_Agent_Systems",
+              "punten": 4,
+              "semester": 2
+            },
+            {
+              "code": "H04I0A",
+              "fases": [2],
+              "naam": "Internet_Infrastructure",
+              "punten": 5,
+              "semester": 2
+            },
+            {
+              "code": "G0K31A",
+              "fases": [2],
+              "naam": "Gedistribueerde_software_architecturen_verdiepende_studie",
+              "punten": 6,
+              "semester": 2
+            }
+          ],
+          "keuze": [
+            {
+              "code": "H04L2A",
+              "fases": [1,2],
+              "naam": "Software_for_Real_time_and_Embedded_Systems",
+              "punten": 4,
+              "semester": 1
+            },
+            {
+              "code": "H04G4A",
+              "fases": [2],
+              "naam": "Security_of_Network_and_Computer_Infrastructure",
+              "punten": 4,
+              "semester": 2
+            },
+            {
+              "code": "H04G7A",
+              "fases": [2],
+              "naam": "Capita_Selecta_Computer_Science_Distributed_Systems",
+              "punten": 4,
+              "semester": 3
+            }
+          ]
+        }
+      },
+      {
+        "naam": "Veilige_Software",
+        "vakken": {
+          "verplicht": [
+            {
+              "code": "H04K5A",
+              "fases": [1],
+              "naam": "Development_of_Secure_Software",
+              "punten": 4,
+              "semester": 1
+            },
+            {
+              "code": "H04G4A",
+              "fases": [2],
+              "naam": "Security_of_Network_and_Computer_Infrastructure",
+              "punten": 4,
+              "semester": 2
+            },
+            {
+              "code": "H05M8B",
+              "fases": [2],
+              "naam": "Capita_Selecta_Computer_Science_Secure_Software",
+              "punten": 6,
+              "semester": 3
+            }
+          ],
+          "keuze": [
+            {
+              "code": "H04L2A",
+              "fases": [1,2],
+              "naam": "Software_for_Real_time_and_Embedded_Systems",
+              "punten": 4,
+              "semester": 1
+            },
+            {
+              "code": "G0K32A",
+              "fases": [1,2],
+              "naam": "Vereistenanalyse_voor_complexe_softwaresystemen",
+              "punten": 3,
+              "semester": 1
+            },
+            {
+              "code": "H04H8B",
+              "fases": [1,2],
+              "naam": "Formal_Systems_and_their_Applications",
+              "punten": 6,
+              "semester": 1
+            },
+            {
+              "code": "H04I0A",
+              "fases": [2],
+              "naam": "Internet_Infrastructure",
+              "punten": 5,
+              "semester": 2
+            },
+            {
+              "code": "H05D9A",
+              "fases": [2],
+              "naam": "Cryptografie_en_netwerkbeveiliging",
+              "punten": 3,
+              "semester": 2
+            },
+            {
+              "code": "G0K31A",
+              "fases": [2],
+              "naam": "Gedistribueerde_software_architecturen_verdiepende_studie",
+              "punten": 6,
+              "semester": 2
+            }
+          ]
+        }
+      },
+      {
+        "naam": "Artificiele_Intelligentie",
+        "vakken": {
+          "verplicht": [
+            {
+              "code": "H02C1A",
+              "fases": [1,2],
+              "naam": "Machine_Learning_and_Inductive_Inference",
+              "punten": 4,
+              "semester": 1
+            },
+            {
+              "code": "H02A8A",
+              "fases": [1,2],
+              "naam": "Advanced_Programming_Languages_for_AI",
+              "punten": 4,
+              "semester": 2
+            },
+            {
+              "code": "H05N0A",
+              "fases": [1,2],
+              "naam": "Capita_Selecta_Computer_Science_Artificial_Intelligence",
+              "punten": 4,
+              "semester": 3
+            }
+          ],
+          "keuze": [
+            {
+              "code": "H02D1A",
+              "fases": [1,2],
+              "naam": "Genetic_Algorithms_and_Evolutionary_Computing",
+              "punten": 4,
+              "semester": 1
+            },
+            {
+              "code": "H02D2A",
+              "fases": [1,2],
+              "naam": "Uncertainty_in_Artificial_Intelligence",
+              "punten": 4,
+              "semester": 1
+            },
+            {
+              "code": "G0B34B",
+              "fases": [1,2],
+              "naam": "Knowledge_and_the_Web",
+              "punten": 6,
+              "semester": 1
+            },
+            {
+              "code": "H02C3A",
+              "fases": [1,2],
+              "naam": "Knowledge_Representation",
+              "punten": 4,
+              "semester": 2
+            },
+            {
+              "code": "H02C6A",
+              "fases": [1,2],
+              "naam": "Data_Mining",
+              "punten": 4,
+              "semester": 2
+            },
+            {
+              "code": "H02C8B",
+              "fases": [1,2],
+              "naam": "Text_based_Information_Retrieval",
+              "punten": 6,
+              "semester": 2
+            },
+            {
+              "code": "H0T25A",
+              "fases": [1,2],
+              "naam": "Machine_Learning_Project",
+              "punten": 3,
+              "semester": 2
+            }
+          ]
+        }
+      },
+      {
+        "naam": "Software_Engineering",
+        "vakken": {
+          "verplicht": [
+            {
+              "code": "G0K32A",
+              "fases": [1,2],
+              "naam": "Vereistenanalyse_voor_complexe_softwaresystemen",
+              "punten": 3,
+              "semester": 1
+            },
+            {
+              "code": "G0L15B",
+              "fases": [1,2],
+              "naam": "Capita_selecta_van_de_software_engineering",
+              "punten": 4,
+              "semester": 3
+            },
+            {
+              "code": "G0K31A",
+              "fases": [2],
+              "naam": "Gedistribueerde_software_architecturen_verdiepende_studie",
+              "punten": 6,
+              "semester": 2
+            }
+          ],
+          "keuze": [
+            {
+              "code": "H04L2A",
+              "fases": [1,2],
+              "naam": "Software_for_Real_time_and_Embedded_Systems",
+              "punten": 4,
+              "semester": 1
+            },
+            {
+              "code": "H04H8B",
+              "fases": [1,2],
+              "naam": "Formal_Systems_and_their_Applications",
+              "punten": 6,
+              "semester": 1
+            }
+          ]
+        }
+      },
+      {
+        "naam": "Mens_machine_communicatie",
+        "vakken": {
+          "verplicht": [
+            {
+              "code": "G0Q66C",
+              "fases": [1],
+              "naam": "Fundamenten_van_Computergrafiek",
+              "punten": 3,
+              "semester": 1
+            },
+            {
+              "code": "G0Q55A",
+              "fases": [1,2],
+              "naam": "Fundamenten_van_Mens_machine_interactie",
+              "punten": 6,
+              "semester": 1
+            },
+            {
+              "code": "H05N2A",
+              "fases": [2],
+              "naam": "Capita_selecta_mens_machine_communicatie_en_multimedia",
+              "punten": 4,
+              "semester": 3
+            }
+          ],
+          "keuze": [
+            {
+              "code": "H02A5A",
+              "fases": [1,2],
+              "naam": "Computer_Vision",
+              "punten": 4,
+              "semester": 2
+            },
+            {
+              "code": "G0B36A",
+              "fases": [1,2],
+              "naam": "Computergrafiek_2",
+              "punten": 4,
+              "semester": 2
+            },
+            {
+              "code": "H09J2A",
+              "fases": [1,2],
+              "naam": "Pattern_Recognition_and_Image_Interpretation",
+              "punten": 6,
+              "semester": 2
+            },
+            {
+              "code": "H04I2A",
+              "fases": [1,2],
+              "naam": "Informatie_visualisatie",
+              "punten": 4,
+              "semester": 2
+            },
+            {
+              "code": "H07Z5A",
+              "fases": [1,2],
+              "naam": "Computergrafiek_project",
+              "punten": 3,
+              "semester": 2
+            }
+          ]
+        }
+      },
+      {
+        "naam": "Computationele_Informatica",
+        "vakken": {
+          "verplicht": [
+            {
+              "code": "H03F0A",
+              "fases": [1,2],
+              "naam": "Technisch_wetenschappelijke_software",
+              "punten": 6,
+              "semester": 1
+            },
+            {
+              "code": "H03F9A",
+              "fases": [1,2],
+              "naam": "Parallel_Computing",
+              "punten": 4,
+              "semester": 1
+            },
+            {
+              "code": "G0Q63B",
+              "fases": [1,2],
+              "naam": "Complexiteitstheorie",
+              "punten": 6,
+              "semester": 2
+            }
+          ],
+          "keuze": [
+            {
+              "code": "H01G1A",
+              "fases": [1,2],
+              "naam": "Computergesteund_probleemoplossen",
+              "punten": 3,
+              "semester": 1
+            },
+            {
+              "code": "H03F7A",
+              "fases": [1,2],
+              "naam": "Wavelets",
+              "punten": 6,
+              "semester": 1
+            },
+            {
+              "code": "H02D1A",
+              "fases": [1,2],
+              "naam": "Genetic_Algorithms_and_Evolutionary_Computing",
+              "punten": 4,
+              "semester": 1
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

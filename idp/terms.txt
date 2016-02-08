@@ -1,0 +1,2 @@
+Semester;sum{ f[Fase],t[Studiepunten] : abs(sum{ sp[Studiepunten] : GeselecteerdAantalStudiepuntenPerSemester(Eerste,f)=sp : sp } - sum{ sp[Studiepunten] : GeselecteerdAantalStudiepuntenPerSemester(Tweede,f)=sp : sp })=t : t}
+Studiepunten;sum{ vg t : GeselecteerdAantalStudiepuntenPerVakGroep(vg)=t & IsType(vg,Opleiding) : t}

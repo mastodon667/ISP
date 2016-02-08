@@ -1,0 +1,104 @@
+#File name: ispapp.py
+
+<GroupPanel>:
+    size_hint_y: None
+    cols: 1
+    spacing: 10
+    padding: [0,10,0,10]
+
+<CoursePanel>:
+    size_hint_y: None
+    size_hint_x: .9
+    pos_hint: {'right': .95}
+    height: 90
+    orientation: 'vertical'
+    canvas.before:
+        Color:
+            rgba: 0, 0, 1, 1
+        Rectangle:
+            pos: (self.x,self.y)
+            size: (self.width,self.height)
+    canvas.after:
+        Color:
+            rgba: 1, 1, 1, 1
+        Ellipse:
+            pos: (self.x + self.width - 40, self.y + 20)
+            size: (20,20)
+            angle_start: 180 if self.term == 1 else 0
+            angle_end: 180 if self.term == 2 else 360
+
+<StagePanel>:
+    cols: 2
+    size_hint: None,None
+    size: 100,40
+    canvas.after:
+        Line:
+            rectangle: self.x,self.y,self.width,self.height
+
+<CourseLabel>:
+    size_hint_y: None
+    height: 40
+    text_size: self.width-30,self.height
+    halign: 'left'
+    valign: 'middle'
+
+<GroupLabel>:
+    color: 0, 0, 0, 1
+    size_hint_y: None
+    height: 40
+    canvas.before:
+        Color:
+            rgba: 0, 1, 0, 1
+        Rectangle:
+            pos: (self.x,self.y)
+            size: (self.width,self.height)
+
+<TypeLabel>:
+    color: 0, 0, 0, 1
+    size_hint_y: None
+    height: 40
+    canvas.before:
+        Color:
+            rgba: 1, 1, 0, 1
+        Rectangle:
+            pos: (self.x+(self.width*.03),self.y)
+            size: (self.width*.94,self.height)
+
+<TotalLayout>:
+    spacing: 6
+    canvas.before:
+        Color:
+            rgba: .38, .38, .38, 1
+        Line:
+            points: self.x+self.width-203, self.y, self.x+self.width-203, self.y+self.height
+            width: 3
+
+<ActLabel>:
+    size_hint_y: None
+    height: 30
+    canvas.before:
+        Color:
+            rgba: .5, .5, 0, 1
+        Rectangle:
+            pos: self.x,self.y
+            size: self.width,self.height
+
+<HistoryLabel>:
+    size_hint_y: None
+    height: 30
+    canvas.before:
+        Color:
+            rgba: .38, .38, .38, 1
+        Line:
+            points: self.x, self.y, self.x+self.width, self.y
+            width: 1
+
+<AllLayout>:
+    orientation: 'vertical'
+    spacing: 6
+    canvas.before:
+        Color:
+            rgba: .38, .38, .38, 1
+        Line:
+            points: self.x, self.y+33, self.x+self.width, self.y+33
+            width: 3
