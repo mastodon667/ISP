@@ -65,7 +65,7 @@ class InferencePanel(BoxLayout):
         if self.callback:
             s = self.sat(choices)
             if self.idp.sat(self.parser.print_domain(s)):
-                self.blahblah(choices)
+                self.step(choices)
             else:
                 self.show_unsat_popup(s, choices)
 
@@ -124,7 +124,7 @@ class InferencePanel(BoxLayout):
                                      self.programme_main.get_max_ects())
         ppDistri.open()
 
-    def blahblah(self, choices):
+    def step(self, choices):
         codes = list()
         ch_new = self.choices.copy()
         for course in choices:
