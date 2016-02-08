@@ -134,15 +134,15 @@ class InferencePanel(BoxLayout):
         self.propagate(programme)
         pr_new, un_new = self.split_courses(programme.get_all_courses(), ch_new.keys())
         pr_old, un_old = self.split_courses(self.programme_main.get_all_courses(), ch_new.keys())
-        #propagations = list()
-        #before = list()
-        #for code in pr_new.keys():
-        #    if code not in pr_old.keys():
-        #        propagations.append(pr_new.get(code))
-        #        before.append(un_old.get(code))
-        #    elif not pr_new.get(code) == pr_old.get(code):
-        #        propagations.append(pr_new.get(code))
-        #        before.append(pr_old.get(code))
+        propagations = list()
+        before = list()
+        for code in pr_new.keys():
+            if code not in pr_old.keys():
+                propagations.append(pr_new.get(code))
+                before.append(un_old.get(code))
+            elif not pr_new.get(code) == pr_old.get(code):
+                propagations.append(pr_new.get(code))
+                before.append(pr_old.get(code))
         unknown = list()
         unknown_before = list()
         for code in pr_old.keys():
