@@ -96,8 +96,9 @@ class Course(object):
 
 
 class Class(object):
-    #1,2,9,7,(3,5),(3,6),17,18,21,31,34,37
-    def __init__(self, event_nr, week, code, ects_d, start, end, building, room_nr, room_name, teacher, notes, group_info):
+    # 1,2,9,7,(3,5),(3,6),17,18,21,31,34,37
+    def __init__(self, event_nr, week, code, ects_d, start, end, building, room_nr, room_name, teacher, notes,
+                 group_info):
         self.event_nr = event_nr
         self.week = week
         self.code = code
@@ -113,7 +114,7 @@ class Class(object):
 
     def get_duration(self):
         duration = self.end - self.start
-        return duration.total_seconds()/3600
+        return duration.total_seconds() / 3600
 
     def __str__(self):
         s = 'Course: ' + self.code + ' - ' + self.notes + ' ' + self.group_info + '\n'
@@ -122,4 +123,3 @@ class Class(object):
         s += 'Location: ' + self.building + ' ' + self.room_nr + '(' + self.room_name + ')' + '\n'
         s += 'From: ' + str(self.start) + 'Until: ' + str(self.end) + '\n\n'
         return s
-
