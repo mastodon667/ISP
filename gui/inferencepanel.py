@@ -68,7 +68,7 @@ class InferencePanel(BoxLayout):
         if self.callback:
             s = self.sat(choices)
             if self.idp.sat(self.parser.print_domain(s)):
-                self.blahblah(choices)
+                self.step(choices)
             else:
                 self.show_unsat_popup(s, choices)
 
@@ -155,11 +155,10 @@ class InferencePanel(BoxLayout):
     def show_undo_action_popup(self, *args):
         if len(self.history) > 0:
             action = self.history[len(self.history)-1]
+            self.undo_action()
             if isinstance(action, UserAction) and len(action.propagations) > 0:
                 ppUndoAction = UndoActionPopup(action, self)
                 ppUndoAction.open()
-            else:
-                self.undo_action(action.before)
 
     def show_unsat_popup(self, programme, choices):
         t = self.updater.get_unsat(self.idp.unsat(self.parser.print_domain(programme)))
@@ -175,26 +174,18 @@ class InferencePanel(BoxLayout):
                                      self.programme_main.get_max_ects())
         ppDistri.open()
 
-    def undo_action(self, courses):
+    def undo_action(self):
         if len(self.history) > 0:
-            self.history.pop(len(self.history)-1)
-            for course in courses:
+            action = self.history.pop(len(self.history)-1)
+            for course in action.before:
                 self.programme_main.update_not_interested(course.code, course.not_interested)
                 self.programme_main.update_selected(course.code, course.selected)
+            self.programme_temp = self.programme_main.clone()
             self.refresh()
             self.update_history()
 
-    def blahblah(self, choices):
-        codes = list()
-        for course in choices:
-            print('User choice: ' + str(course))
-            codes.append(course.code)
-        ch_old = self.get_all_user_selections([])
-        for course in ch_old.values():
-            print('User choice (n-1): ' + str(course))
+    def step(self, choices):
         ch_new = self.get_all_user_selections(choices)
-        for course in ch_new.values():
-            print('User choice (n): ' + str(course))
         programme = self.programme_init.clone()
         for choice in ch_new.values():
             programme.update_not_interested(choice.code, choice.not_interested)
@@ -202,14 +193,6 @@ class InferencePanel(BoxLayout):
         self.propagate(programme)
         pr_new, un_new = self.split_courses(programme.get_all_courses(), ch_new.keys())
         pr_old, un_old = self.split_courses(self.programme_temp.get_all_courses(), ch_new.keys())
-        for course in pr_old.values():
-            print('Old propagation: ' + str(course))
-        for course in un_old.values():
-            print('Old unknowns: ' + str(course))
-        for course in pr_new.values():
-            print('New propagation: ' + str(course))
-        for course in un_new.values():
-            print('New unknowns: ' + str(course))
         #LOOK FOR ANY NEW PROPAGATIONS (=different than previous prop. or previously unknown)
         propagations = list()
         before = list()
