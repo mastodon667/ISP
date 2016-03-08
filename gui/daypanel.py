@@ -1,19 +1,24 @@
 from kivy.uix.floatlayout import FloatLayout
 from kivy.graphics import *
 from datetime import *
+from gui.elements import TimeLabel
 
 
 class DayPanel(FloatLayout):
 
-    def __init__(self, classes):
+    def __init__(self, classes, date):
         super(DayPanel, self).__init__()
         self.classes = classes
         self.colors = list()
         self.size_hint_y = None
         self.height = 700
+        self.date = datetime(year=date[2],month=date[1],day=date[0],hour=8)
         self.build()
 
     def build(self):
+        for y in range(0,15):
+            self.add_widget(TimeLabel(text=str(self.date.hour)+':'+str(self.date.minute), pos_hint={'right':1.1}, y=self.y-self.height/2+(self.height/14)*y))
+            self.date = self.date + timedelta(hours=1)
         with self.canvas:
             for y in range(0,15):
                 Color(1,1,1,1)

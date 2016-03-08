@@ -22,3 +22,6 @@ class HistoryLabel(Label):
 
 class AllLayout(BoxLayout):
     pass
+
+class TimeLabel(Label):
+    pass

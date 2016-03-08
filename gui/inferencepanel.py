@@ -4,7 +4,9 @@ from kivy.uix.dropdown import DropDown
 from kivy.uix.button import Button
 from reader.updater import Updater
 from reader.parser import Parser
-from idp.idp import IDP
+from reader.explanationparser import ExplanationParser
+from idp.explanation.idpexplanation import IDPExplanation
+from idp.isp.idpisp import IDPISP
 from data.action import UserAction, InferenceAction
 from gui.grouppanel import GroupPanel
 from gui.undopopup import UndoPopup
@@ -23,10 +25,12 @@ class InferencePanel(BoxLayout):
         self.callback = False
         self.updater = Updater()
         self.parser = Parser()
+        self.explantationParser = ExplanationParser()
         self.programme_main = self.parser.read(url)
         self.programme_temp = self.programme_main.clone()
         self.programme_init = self.programme_main.clone()
-        self.idp = IDP()
+        self.idp = IDPISP()
+        self.explanation = IDPExplanation()
         self.pnlProgramme = GroupPanel(self.programme_main, self)
         self.svHistory = ScrollView()
         self.dbOptions = DropDown()
@@ -49,10 +53,12 @@ class InferencePanel(BoxLayout):
             self.dbOptions.add_widget(btnTerm)
         self.dbOptions.bind(on_select=lambda instance, x: setattr(self.btnSelect, 'text', x))
         btnDistri = Button(size_hint_y=None, height=30, text='ECTS Stats', on_release=self.show_distribution_popup)
+        btnExplain = Button(size_hint_y=None, height=30, text='Explain', on_release=self.explain)
         bltBottom.add_widget(btnExpand)
         bltBottom.add_widget(btnOptimize)
         bltBottom.add_widget(self.btnSelect)
         bltBottom.add_widget(btnDistri)
+        bltBottom.add_widget(btnExplain)
         svMain.add_widget(self.pnlProgramme)
         bltCenter.add_widget(svMain)
         bltCenter.add_widget(bltBottom)
@@ -64,13 +70,18 @@ class InferencePanel(BoxLayout):
         bltAll.add_widget(bltRight)
         self.add_widget(bltAll)
 
+    def explain(self, *args):
+        i = self.explanation.expand(self.parser.print_explanation(self.programme_main))
+        r = self.explantationParser.find_broken_rules(i)
+        print(r)
+
     def update(self, choices):
         if self.callback:
-            s = self.sat(choices)
-            if self.idp.sat(self.parser.print_domain(s)):
+            programme = self.build_programme(choices)
+            if self.idp.sat(self.parser.print_domain(programme)):
                 self.step(choices)
             else:
-                self.show_unsat_popup(s, choices)
+                self.show_unsat_popup(programme, choices)
 
     def propagate(self, programme):
         i = self.parser.print_domain(programme)
@@ -78,20 +89,11 @@ class InferencePanel(BoxLayout):
         self.updater.filter(self.idp.propagate(i))
         self.updater.update_programme(programme)
 
-    def sat(self, choices):
+    def build_programme(self, choices):
         programme = self.programme_init.clone()
-        for action in self.history:
-            if isinstance(action, UserAction):
-                for course in action.choices:
-                    programme.update_not_interested(course.code, course.not_interested)
-                    programme.update_selected(course.code, course.selected)
-            elif isinstance(action, InferenceAction):
-                for course in action.after:
-                    programme.update_not_interested(course.code, course.not_interested)
-                    programme.update_selected(course.code, course.selected)
-        for course in choices:
-            programme.update_not_interested(course.code, course.not_interested)
-            programme.update_selected(course.code, course.selected)
+        for choice in self.get_all_user_choices(choices).values():
+            programme.update_not_interested(choice.code, choice.not_interested)
+            programme.update_selected(choice.code, choice.selected)
         return programme
 
     def expand(self, *args):
@@ -99,7 +101,7 @@ class InferencePanel(BoxLayout):
         self.updater.filter(i)
         self.updater.filter(self.idp.expand(i))
         self.updater.update_programme(self.programme_main)
-        self.create_inference_action('Model Expansion')
+        #self.create_inference_action('Model Expansion')
         self.refresh()
 
     def minimize(self, *args):
@@ -108,14 +110,21 @@ class InferencePanel(BoxLayout):
             self.updater.filter(i)
             self.updater.filter(self.idp.minimize(self.btnSelect.text, i))
             self.updater.update_programme(self.programme_main)
-            self.create_inference_action('Minimization: ' + self.btnSelect.text)
+            #self.create_inference_action('Minimization: ' + self.btnSelect.text)
             self.refresh()
 
     def refresh(self):
         self.callback = False
-        self.panel.update(self.programme_main.get_selected_courses())
+        self.panel.update(self.make_list())
         self.pnlProgramme.refresh()
         self.callback = True
+
+    def make_list(self):
+        courses = self.programme_main.get_all_courses()
+        d = dict()
+        for course in courses.values():
+            d[course.code] = course.selected
+        return d
 
     def create_user_action(self, choices, propagations, before):
         if len(before) > 0:
@@ -185,14 +194,11 @@ class InferencePanel(BoxLayout):
             self.update_history()
 
     def step(self, choices):
-        ch_new = self.get_all_user_selections(choices)
-        programme = self.programme_init.clone()
-        for choice in ch_new.values():
-            programme.update_not_interested(choice.code, choice.not_interested)
-            programme.update_selected(choice.code, choice.selected)
+        all_choices = self.get_all_user_choices(choices)
+        programme = self.build_programme(choices)
         self.propagate(programme)
-        pr_new, un_new = self.split_courses(programme.get_all_courses(), ch_new.keys())
-        pr_old, un_old = self.split_courses(self.programme_temp.get_all_courses(), ch_new.keys())
+        pr_new, un_new = self.split_courses(programme.get_all_courses(), all_choices.keys())
+        pr_old, un_old = self.split_courses(self.programme_temp.get_all_courses(), all_choices.keys())
         #LOOK FOR ANY NEW PROPAGATIONS (=different than previous prop. or previously unknown)
         propagations = list()
         before = list()
@@ -222,7 +228,7 @@ class InferencePanel(BoxLayout):
             #SHOW POPUP ASKING USER WHICH OF THE FORMER PROPAGATIONS TO KEEP
             #OUTCOME OF SELECTION TOGETHER WITH CURRENT SELECTION BECOME NEW CHOICES
 
-    def get_all_user_selections(self, choices):
+    def get_all_user_choices(self, choices):
         result = dict()
         for action in self.history:
             if isinstance(action, UserAction):

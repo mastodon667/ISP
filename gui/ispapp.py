@@ -5,17 +5,16 @@ from gui.inferencepanel import InferencePanel
 from kivy.uix.accordion import Accordion, AccordionItem
 from gui.elements import AllLayout
 from gui.calendarpanel import CalendarPanel
-from reader.roster import Roster
 from reader.parser import Parser
 
 
 class IspApp(App):
 
-    def __init__(self, url, classes):
+    def __init__(self, url, stages):
         super(IspApp, self).__init__()
         self.url = url
         self.accordion = Accordion()
-        self.pnlCalendar = CalendarPanel(classes)
+        self.pnlCalendar = CalendarPanel(stages)
 
     def build(self):
         Window.size = (1400, 800)
@@ -38,10 +37,7 @@ class IspApp(App):
 def main():
     parser = Parser()
     edj = parser.read('/home/herbert/PycharmProjects/Thesis/reader/DomainTI.json')
-    roster = Roster('/home/herbert/PycharmProjects/Thesis/reader/', 'msti.txt',
-                    edj.get_all_courses().keys())
-    classes = roster.parse()
-    isp = IspApp('/home/herbert/PycharmProjects/Thesis/reader/DomainTI.json', classes)
+    isp = IspApp('/home/herbert/PycharmProjects/Thesis/reader/DomainTI.json', edj.stages)
     isp.run()
 
 if __name__ == "__main__":

@@ -124,6 +124,55 @@ class Parser(object):
 
         return s
 
+    def print_explanation(self, opleiding):
+        # domeinen
+        strFase = 'Fase = {1..' + str(opleiding.stages) + '}'
+        strVak = 'Vak = {'
+        strVakgroep = 'VakGroep = {'
+        strStudiepunten = 'Studiepunten = {0..' + str(opleiding.max) + '}'
+
+        # predicaten
+        strIsType = 'IsType = {'
+        strVerplicht = 'Verplicht = {'
+        strInFase = 'InFase = {'
+        strInVakgroep = 'InVakGroep = {'
+        strGeselecteerd = 'Geselecteerd = {'
+        strNietGeselecteerd = 'NietGeselecteerd = {'
+
+        # functies
+        strMinAantalStudiepunten = 'MinAantalStudiepunten<ct> = {'
+        strMaxAantalStudiepunten = 'MaxAantalStudiepunten<ct> = {'
+        strAantalStudiepunten = 'AantalStudiepunten<ct> = {'
+
+        strVak += opleiding.print_course() + '}'
+        strIsType += opleiding.print_is_type() + '}'
+        strVerplicht += opleiding.print_mandatory_courses() + '}'
+        strInFase += opleiding.print_in_stage() + '}'
+        strInVakgroep += opleiding.print_in_group() + '}'
+        strGeselecteerd += opleiding.print_selected() + '}'
+        strNietGeselecteerd += opleiding.print_not_interested() + '}'
+        strMinAantalStudiepunten += opleiding.print_min_ects() + '}'
+        strMaxAantalStudiepunten += opleiding.print_max_ects() + '}'
+        strAantalStudiepunten += opleiding.print_amount_of_ects() + '}'
+        strVakgroep += opleiding.print_group() + '}'
+
+        s = ''
+        s += strFase + '\n'
+        s += strVak + '\n'
+        s += strVakgroep + '\n'
+        s += strStudiepunten + '\n'
+        s += strIsType + '\n'
+        s += strVerplicht + '\n'
+        s += strInFase + '\n'
+        s += strInVakgroep + '\n'
+        s += strMinAantalStudiepunten + '\n'
+        s += strMaxAantalStudiepunten + '\n'
+        s += strAantalStudiepunten + '\n'
+        s += strGeselecteerd + '\n'
+        s += strNietGeselecteerd + '\n'
+
+        return s
+
     def read(self, file):
         with open(file) as data:
             domain = json.load(data)

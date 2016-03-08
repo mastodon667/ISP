@@ -96,10 +96,11 @@ class Course(object):
 
 
 class Class(object):
-    # 1,2,9,7,(3,5),(3,6),17,18,21,31,34,37
-    def __init__(self, event_nr, week, code, ects_d, start, end, building, room_nr, room_name, teacher, notes,
+    # 1,5,3,10,8,(4,6),(4,7),18,19,22,32,35,38
+    def __init__(self, event_id, weekday, week, code, ects_d, start, end, building, room_nr, room_name, teacher, notes,
                  group_info):
-        self.event_nr = event_nr
+        self.event_id = event_id
+        self.weekday = weekday
         self.week = week
         self.code = code
         self.ects_d = ects_d
@@ -116,9 +117,23 @@ class Class(object):
         duration = self.end - self.start
         return duration.total_seconds() / 3600
 
+    def get_start(self):
+        slot = self.weekday*26
+        slot += (self.start.hour-8)*2
+        if self.start.minute >= 30:
+            slot += 1
+        return slot
+
+    def get_end(self):
+        slot = self.weekday*26
+        slot += (self.end.hour-8)*2
+        if self.end.minute >= 30:
+            slot += 1
+        return slot
+
     def __str__(self):
         s = 'Course: ' + self.code + ' - ' + self.notes + ' ' + self.group_info + '\n'
-        s += 'Class #' + str(self.event_nr) + ' in week ' + str(self.week) + '\n'
+        s += 'Class #' + str(self.event_id) + ' in week ' + str(self.week) + '\n'
         s += 'Teacher: ' + self.teacher + '\n'
         s += 'Location: ' + self.building + ' ' + self.room_nr + '(' + self.room_name + ')' + '\n'
         s += 'From: ' + str(self.start) + 'Until: ' + str(self.end) + '\n\n'

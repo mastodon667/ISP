@@ -1,6 +1,0 @@
-expansion;print(onemodel(T,S))
-explanation;explainunsat(T,S,U)
-minimization;print(minimize(T,S,O)[0])
-propagation;print(groundpropagate(T,S))
-sat;print(sat(T,S))
-unsat;print(unsatstructure(T,S,U))
