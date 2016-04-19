@@ -9,28 +9,28 @@
         {
           "code": "H04I4A",
           "fases": [1],
-          "naam": "Gedistribueerde_Systemen",
+          "naam": "Gedistribueerde Systemen",
           "punten": 6,
           "semester": 1
         },
         {
           "code": "G0B23A",
           "fases": [1],
-          "naam": "Modellering_van_complexe_systemen",
+          "naam": "Modellering van complexe systemen",
           "punten": 6,
           "semester": 1
         },
         {
           "code": "H09B5A",
           "fases": [1],
-          "naam": "Software_architectuur",
+          "naam": "Software architectuur",
           "punten": 6,
           "semester": 2
         },
         {
           "code": "H04L5A",
           "fases": [2],
-          "naam": "Vergelijkende_studie_van_imperatieve_programmeertalen",
+          "naam": "Vergelijkende studie van imperatieve programmeertalen",
           "punten": 6,
           "semester": 1
         },
@@ -59,21 +59,21 @@
             {
             "code": "H04H5B",
             "fases": [1],
-            "naam": "Studie_van_declaratieve_talen",
+            "naam": "Studie van declaratieve talen",
             "punten": 4,
             "semester": 1
             },
             {
             "code": "H04J9B",
             "fases": [1],
-            "naam": "Ontwerp_van_softwaresystemen",
+            "naam": "Ontwerp van softwaresystemen",
             "punten": 6,
             "semester": 1
             },
             {
             "code": "H04H0B",
             "fases": [1],
-            "naam": "Fundamenten_voor_de_computerwetenschappen",
+            "naam": "Fundamenten voor de computerwetenschappen",
             "punten": 5,
             "semester": 2
             }
@@ -88,21 +88,21 @@
             {
             "code": "H01F2A",
             "fases": [1],
-            "naam": "Bedrijfskunde_en_Entrepreneurship",
+            "naam": "Bedrijfskunde en Entrepreneurship",
             "punten": 6,
             "semester": 1
             },
             {
             "code": "G0Q57A",
             "fases": [1],
-            "naam": "Modellering_en_simulatie",
+            "naam": "Modellering en simulatie",
             "punten": 6,
             "semester": 1
             },
             {
             "code": "H01L1A",
             "fases": [1],
-            "naam": "Digitale_elektronica_en_processoren",
+            "naam": "Digitale elektronica en processoren",
             "punten": 6,
             "semester": 2
             }
@@ -120,7 +120,7 @@
           {
             "code": "H05U5A",
             "fases": [1],
-            "naam": "Capita_selecta_ingenieurswetenschappen_I_1_Athens_Summer_Course",
+            "naam": "Capita selecta ingenieurswetenschappen I.1.(Athens/Summer Course)",
             "punten": 3,
             "semester": 1
           }
@@ -128,7 +128,7 @@
           {
             "code": "H05U6A",
             "fases": [1],
-            "naam": "Capita_selecta_ingenieurswetenschappen_I_2_Athens_Summer_Course",
+            "naam": "Capita selecta ingenieurswetenschappen I.2.(Athens/Summer Course)",
             "punten": 3,
             "semester": 2
           }
@@ -144,7 +144,7 @@
           {
             "code": "H04I9A",
             "fases": [2],
-            "naam": "Industriele_stage_Computerwetenschappen_Industrial_Internship_Computer_Science",
+            "naam": "Industriele stage: Computerwetenschappen / Industrial Internship: Computer Science",
             "punten": 6,
             "semester": 1
           }
@@ -152,7 +152,7 @@
           {
             "code": "H04K9A",
             "fases": [2],
-            "naam": "Capita_selecta_ingenieurswetenschappen_II_1_Athens_Summer_Course",
+            "naam": "Capita selecta ingenieurswetenschappen II.1.(Athens/Summer Course)",
             "punten": 3,
             "semester": 1
           }
@@ -160,7 +160,7 @@
           {
             "code": "H05U7A",
             "fases": [2],
-            "naam": "Capita_selecta_ingenieurswetenschappen_II_2_Athens_Summer_Course",
+            "naam": "Capita selecta ingenieurswetenschappen II.2.(Athens/Summer Course)",
             "punten": 3,
             "semester": 2
           }
@@ -179,21 +179,21 @@
               1,
               2
             ],
-            "naam": "Engineering_and_Entrepreneurship",
+            "naam": "Engineering and Entrepreneurship",
             "punten": 6,
             "semester": 2
           },
           {
             "code": "H04X2A",
             "fases": [2],
-            "naam": "Project_Management",
+            "naam": "Project Management",
             "punten": 3,
             "semester": 2
           },
           {
             "code": "S0C78B",
             "fases": [1],
-            "naam": "Usability_Design",
+            "naam": "Usability Design",
             "punten": 6,
             "semester": 2
           },
@@ -203,7 +203,7 @@
               1,
               2
             ],
-            "naam": "Engineering_Economy",
+            "naam": "Engineering Economy",
             "punten": 3,
             "semester": 1
           },
@@ -213,7 +213,7 @@
               1,
               2
             ],
-            "naam": "Bedrijfservaring_Computerwetenschappen_Industrial_Experience_Computer_Science",
+            "naam": "Bedrijfservaring: Computerwetenschappen / Industrial Experience: Computer Science",
             "punten": 3,
             "semester": 1
           },
@@ -223,7 +223,7 @@
               1,
               2
             ],
-            "naam": "Simulation_Theory_and_Applications",
+            "naam": "Simulation Theory and Applications",
             "punten": 6,
             "semester": 1
           },
@@ -233,7 +233,7 @@
               1,
               2
             ],
-            "naam": "Interdisciplinary_Perspectives_on_Development_and_Cultures",
+            "naam": "Interdisciplinary Perspectives on Development and Cultures",
             "punten": 4,
             "semester": 1
           },
@@ -243,7 +243,7 @@
               1,
               2
             ],
-            "naam": "Statistische_modellen_and_data_analyse",
+            "naam": "Statistische modellen and data analyse",
             "punten": 6,
             "semester": 2
           },
@@ -253,7 +253,7 @@
               1,
               2
             ],
-            "naam": "Milieuproblemen_en_technieken",
+            "naam": "Milieuproblemen en technieken",
             "punten": 3,
             "semester": 2
           },
@@ -263,7 +263,7 @@
               1,
               2
             ],
-            "naam": "ICT_Service_Management",
+            "naam": "ICT Service Management",
             "punten": 6,
             "semester": 2
           },
@@ -273,7 +273,7 @@
               1,
               2
             ],
-            "naam": "Expressievaardigheid_in_de_technische_bedrijfsomgeving",
+            "naam": "Expressievaardigheid in de technische bedrijfsomgeving",
             "punten": 3,
             "semester": 2
           },
@@ -283,7 +283,7 @@
               1,
               2
             ],
-            "naam": "Plichtenleer_van_de_ingenieur",
+            "naam": "Plichtenleer van de ingenieur",
             "punten": 3,
             "semester": 2
           },
@@ -293,7 +293,7 @@
               1,
               2
             ],
-            "naam": "Recht_van_de_intellectuele_eigendom",
+            "naam": "Recht van de intellectuele eigendom",
             "punten": 3,
             "semester": 2
           },
@@ -303,7 +303,7 @@
               1,
               2
             ],
-            "naam": "Intellectual_Property_Management",
+            "naam": "Intellectual Property Management",
             "punten": 4,
             "semester": 2
           },
@@ -313,7 +313,7 @@
               1,
               2
             ],
-            "naam": "Psychologie_miv_psychologie_van_de_waarneming",
+            "naam": "Psychologie m.i.v. psychologie van de waarneming",
             "punten": 3,
             "semester": 2
           },
@@ -323,7 +323,7 @@
               1,
               2
             ],
-            "naam": "Interdisciplinair_college_duurzame_ontwikkeling",
+            "naam": "Interdisciplinair college duurzame ontwikkeling",
             "punten": 3,
             "semester": 2
           },
@@ -333,14 +333,14 @@
               1,
               2
             ],
-            "naam": "Philosophy_of_Science_Advanced_Course",
+            "naam": "Philosophy of Science: Advanced Course",
             "punten": 4,
             "semester": 2
           },
           {
             "code": "G0B16A",
             "fases": [1,2],
-            "naam": "Robust_Statistics",
+            "naam": "Robust Statistics",
             "punten": 6,
             "semester": 2
           },
@@ -350,7 +350,7 @@
               1,
               2
             ],
-            "naam": "Experimental_Design",
+            "naam": "Experimental Design",
             "punten": 4,
             "semester": 2
           },
@@ -360,7 +360,7 @@
               1,
               2
             ],
-            "naam": "Geschiedenis_van_de_informatica",
+            "naam": "Geschiedenis van de informatica",
             "punten": 4,
             "semester": 2
           },
@@ -370,7 +370,7 @@
               1,
               2
             ],
-            "naam": "ICT_recht",
+            "naam": "ICT-recht",
             "punten": 4,
             "semester": 2
           },
@@ -380,7 +380,7 @@
               1,
               2
             ],
-            "naam": "Entrepreneurship_in_de_praktijk_in_practice",
+            "naam": "Entrepreneurship in de praktijk / in practice",
             "punten": 3,
             "semester": 2
           },
@@ -390,7 +390,7 @@
               1,
               2
             ],
-            "naam": "Lessen_voor_de_21ste_eeuw",
+            "naam": "Lessen voor de 21ste eeuw",
             "punten": 4,
             "semester": 3
           },
@@ -410,7 +410,7 @@
               1,
               2
             ],
-            "naam": "Engels_in_de_bedrijfsomgeving",
+            "naam": "Engels in de bedrijfsomgeving",
             "punten": 3,
             "semester": 3
           },
@@ -420,7 +420,7 @@
               1,
               2
             ],
-            "naam": "Frans_in_de_bedrijfsomgeving",
+            "naam": "Frans in de bedrijfsomgeving",
             "punten": 3,
             "semester": 3
           },
@@ -445,21 +445,21 @@
             {
               "code": "H02H4A",
               "fases": [1],
-              "naam": "Multi_Agent_Systems",
+              "naam": "Multi-Agent Systems",
               "punten": 4,
               "semester": 2
             },
             {
               "code": "H04I0A",
               "fases": [2],
-              "naam": "Internet_Infrastructure",
+              "naam": "Internet Infrastructure",
               "punten": 5,
               "semester": 2
             },
             {
               "code": "G0K31A",
               "fases": [2],
-              "naam": "Gedistribueerde_software_architecturen_verdiepende_studie",
+              "naam": "Gedistribueerde software architecturen: verdiepende studie",
               "punten": 6,
               "semester": 2
             }
@@ -468,21 +468,21 @@
             {
               "code": "H04L2A",
               "fases": [1,2],
-              "naam": "Software_for_Real_time_and_Embedded_Systems",
+              "naam": "Software for Real time and Embedded Systems",
               "punten": 4,
               "semester": 1
             },
             {
               "code": "H04G4A",
               "fases": [2],
-              "naam": "Security_of_Network_and_Computer_Infrastructure",
+              "naam": "Security of Network and Computer Infrastructure",
               "punten": 4,
               "semester": 2
             },
             {
               "code": "H04G7A",
               "fases": [2],
-              "naam": "Capita_Selecta_Computer_Science_Distributed_Systems",
+              "naam": "Capita Selecta Computer Science: Distributed Systems",
               "punten": 4,
               "semester": 3
             }
@@ -496,21 +496,21 @@
             {
               "code": "H04K5A",
               "fases": [1],
-              "naam": "Development_of_Secure_Software",
+              "naam": "Development of Secure Software",
               "punten": 4,
               "semester": 1
             },
             {
               "code": "H04G4A",
               "fases": [2],
-              "naam": "Security_of_Network_and_Computer_Infrastructure",
+              "naam": "Security of Network and Computer Infrastructure",
               "punten": 4,
               "semester": 2
             },
             {
               "code": "H05M8B",
               "fases": [2],
-              "naam": "Capita_Selecta_Computer_Science_Secure_Software",
+              "naam": "Capita Selecta Computer Science: Secure Software",
               "punten": 6,
               "semester": 3
             }
@@ -519,42 +519,42 @@
             {
               "code": "H04L2A",
               "fases": [1,2],
-              "naam": "Software_for_Real_time_and_Embedded_Systems",
+              "naam": "Software for Real time and Embedded Systems",
               "punten": 4,
               "semester": 1
             },
             {
               "code": "G0K32A",
               "fases": [1,2],
-              "naam": "Vereistenanalyse_voor_complexe_softwaresystemen",
+              "naam": "Vereistenanalyse voor complexe softwaresystemen",
               "punten": 3,
               "semester": 1
             },
             {
               "code": "H04H8B",
               "fases": [1,2],
-              "naam": "Formal_Systems_and_their_Applications",
+              "naam": "Formal Systems and their Applications",
               "punten": 6,
               "semester": 1
             },
             {
               "code": "H04I0A",
               "fases": [2],
-              "naam": "Internet_Infrastructure",
+              "naam": "Internet Infrastructure",
               "punten": 5,
               "semester": 2
             },
             {
               "code": "H05D9A",
               "fases": [2],
-              "naam": "Cryptografie_en_netwerkbeveiliging",
+              "naam": "Cryptografie en netwerkbeveiliging",
               "punten": 3,
               "semester": 2
             },
             {
               "code": "G0K31A",
               "fases": [2],
-              "naam": "Gedistribueerde_software_architecturen_verdiepende_studie",
+              "naam": "Gedistribueerde software architecturen: verdiepende studie",
               "punten": 6,
               "semester": 2
             }
@@ -568,21 +568,21 @@
             {
               "code": "H02C1A",
               "fases": [1,2],
-              "naam": "Machine_Learning_and_Inductive_Inference",
+              "naam": "Machine Learning and Inductive Inference",
               "punten": 4,
               "semester": 1
             },
             {
               "code": "H02A8A",
               "fases": [1,2],
-              "naam": "Advanced_Programming_Languages_for_AI",
+              "naam": "Advanced Programming Languages for AI",
               "punten": 4,
               "semester": 2
             },
             {
               "code": "H05N0A",
               "fases": [1,2],
-              "naam": "Capita_Selecta_Computer_Science_Artificial_Intelligence",
+              "naam": "Capita Selecta Computer Science: Artificial Intelligence",
               "punten": 4,
               "semester": 3
             }
@@ -591,49 +591,49 @@
             {
               "code": "H02D1A",
               "fases": [1,2],
-              "naam": "Genetic_Algorithms_and_Evolutionary_Computing",
+              "naam": "Genetic Algorithms and Evolutionary Computing",
               "punten": 4,
               "semester": 1
             },
             {
               "code": "H02D2A",
               "fases": [1,2],
-              "naam": "Uncertainty_in_Artificial_Intelligence",
+              "naam": "Uncertainty in Artificial Intelligence",
               "punten": 4,
               "semester": 1
             },
             {
               "code": "G0B34B",
               "fases": [1,2],
-              "naam": "Knowledge_and_the_Web",
+              "naam": "Knowledge and the Web",
               "punten": 6,
               "semester": 1
             },
             {
               "code": "H02C3A",
               "fases": [1,2],
-              "naam": "Knowledge_Representation",
+              "naam": "Knowledge Representation",
               "punten": 4,
               "semester": 2
             },
             {
               "code": "H02C6A",
               "fases": [1,2],
-              "naam": "Data_Mining",
+              "naam": "Data Mining",
               "punten": 4,
               "semester": 2
             },
             {
               "code": "H02C8B",
               "fases": [1,2],
-              "naam": "Text_based_Information_Retrieval",
+              "naam": "Text based Information Retrieval",
               "punten": 6,
               "semester": 2
             },
             {
               "code": "H0T25A",
               "fases": [1,2],
-              "naam": "Machine_Learning_Project",
+              "naam": "Machine Learning: Project",
               "punten": 3,
               "semester": 2
             }
@@ -647,21 +647,21 @@
             {
               "code": "G0K32A",
               "fases": [1,2],
-              "naam": "Vereistenanalyse_voor_complexe_softwaresystemen",
+              "naam": "Vereistenanalyse voor complexe softwaresystemen",
               "punten": 3,
               "semester": 1
             },
             {
               "code": "G0L15B",
               "fases": [1,2],
-              "naam": "Capita_selecta_van_de_software_engineering",
+              "naam": "Capita selecta van de software engineering",
               "punten": 4,
               "semester": 3
             },
             {
               "code": "G0K31A",
               "fases": [2],
-              "naam": "Gedistribueerde_software_architecturen_verdiepende_studie",
+              "naam": "Gedistribueerde software architecturen: verdiepende studie",
               "punten": 6,
               "semester": 2
             }
@@ -670,14 +670,14 @@
             {
               "code": "H04L2A",
               "fases": [1,2],
-              "naam": "Software_for_Real_time_and_Embedded_Systems",
+              "naam": "Software for Real time and Embedded Systems",
               "punten": 4,
               "semester": 1
             },
             {
               "code": "H04H8B",
               "fases": [1,2],
-              "naam": "Formal_Systems_and_their_Applications",
+              "naam": "Formal Systems and their Applications",
               "punten": 6,
               "semester": 1
             }
@@ -691,21 +691,21 @@
             {
               "code": "G0Q66C",
               "fases": [1],
-              "naam": "Fundamenten_van_Computergrafiek",
+              "naam": "Fundamenten van Computergrafiek",
               "punten": 3,
               "semester": 1
             },
             {
               "code": "G0Q55A",
               "fases": [1,2],
-              "naam": "Fundamenten_van_Mens_machine_interactie",
+              "naam": "Fundamenten van Mens-machine interactie",
               "punten": 6,
               "semester": 1
             },
             {
               "code": "H05N2A",
               "fases": [2],
-              "naam": "Capita_selecta_mens_machine_communicatie_en_multimedia",
+              "naam": "Capita selecta, mens machine communicatie en multimedia",
               "punten": 4,
               "semester": 3
             }
@@ -714,35 +714,35 @@
             {
               "code": "H02A5A",
               "fases": [1,2],
-              "naam": "Computer_Vision",
+              "naam": "Computer Vision",
               "punten": 4,
               "semester": 2
             },
             {
               "code": "G0B36A",
               "fases": [1,2],
-              "naam": "Computergrafiek_2",
+              "naam": "Computergrafiek 2",
               "punten": 4,
               "semester": 2
             },
             {
               "code": "H09J2A",
               "fases": [1,2],
-              "naam": "Pattern_Recognition_and_Image_Interpretation",
+              "naam": "Pattern Recognition and Image Interpretation",
               "punten": 6,
               "semester": 2
             },
             {
               "code": "H04I2A",
               "fases": [1,2],
-              "naam": "Informatie_visualisatie",
+              "naam": "Informatie visualisatie",
               "punten": 4,
               "semester": 2
             },
             {
               "code": "H07Z5A",
               "fases": [1,2],
-              "naam": "Computergrafiek_project",
+              "naam": "Computergrafiek: project",
               "punten": 3,
               "semester": 2
             }
@@ -756,14 +756,14 @@
             {
               "code": "H03F0A",
               "fases": [1,2],
-              "naam": "Technisch_wetenschappelijke_software",
+              "naam": "Technisch-wetenschappelijke software",
               "punten": 6,
               "semester": 1
             },
             {
               "code": "H03F9A",
               "fases": [1,2],
-              "naam": "Parallel_Computing",
+              "naam": "Parallel Computing",
               "punten": 4,
               "semester": 1
             },
@@ -779,7 +779,7 @@
             {
               "code": "H01G1A",
               "fases": [1,2],
-              "naam": "Computergesteund_probleemoplossen",
+              "naam": "Computergesteund probleemoplossen",
               "punten": 3,
               "semester": 1
             },
@@ -793,7 +793,7 @@
             {
               "code": "H02D1A",
               "fases": [1,2],
-              "naam": "Genetic_Algorithms_and_Evolutionary_Computing",
+              "naam": "Genetic Algorithms and Evolutionary Computing",
               "punten": 4,
               "semester": 1
             }

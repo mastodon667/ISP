@@ -13,9 +13,6 @@ class Course(object):
     def print_amount_of_ects(self):
         return str(self.code) + '-> ' + str(self.ects) + ';'
 
-    def print_has_name(self):
-        return str(self.code) + '-> ' + str(self.name) + ';'
-
     def print_in_stage(self):
         s = ''
         for item in self.stages:

@@ -88,16 +88,6 @@ class Group(object):
             s += group.print_in_term()
         return s
 
-    def print_has_name(self):
-        s = ''
-        for course in self.mandatory_courses:
-            s += course.print_has_name()
-        for course in self.optional_courses:
-            s += course.print_has_name()
-        for group in self.groups:
-            s += group.print_has_name()
-        return s
-
     def print_course(self):
         s = ''
         for course in self.mandatory_courses:
@@ -106,16 +96,6 @@ class Group(object):
             s += str(course.code) + ';'
         for group in self.groups:
             s += group.print_course()
-        return s
-
-    def print_course_name(self):
-        s = ''
-        for course in self.mandatory_courses:
-            s += str(course.name) + ';'
-        for course in self.optional_courses:
-            s += str(course.name) + ';'
-        for group in self.groups:
-            s += group.print_course_name()
         return s
 
     def print_group(self):

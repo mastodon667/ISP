@@ -71,9 +71,9 @@ class InferencePanel(BoxLayout):
         self.add_widget(bltAll)
 
     def explain(self, *args):
-        i = self.explanation.expand(self.parser.print_explanation(self.programme_main))
+        i = self.explanation.unsat(self.parser.print_explanation(self.programme_main))
         r = self.explantationParser.find_broken_rules(i)
-        print(r)
+        return r
 
     def update(self, choices):
         if self.callback:
@@ -82,6 +82,7 @@ class InferencePanel(BoxLayout):
                 self.step(choices)
             else:
                 self.show_unsat_popup(programme, choices)
+                self.explain()
 
     def propagate(self, programme):
         i = self.parser.print_domain(programme)
@@ -174,7 +175,7 @@ class InferencePanel(BoxLayout):
         courses = list()
         for code in t:
             courses.append(self.programme_main.get_course(code))
-        ppUndo = UndoPopup(courses, choices, self)
+        ppUndo = UndoPopup(courses, choices, self.explain(), self)
         ppUndo.open()
 
     def show_distribution_popup(self, *args):

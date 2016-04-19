@@ -2,13 +2,15 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.scrollview import ScrollView
 from gui.coursepanel import CoursePanel
 from kivy.uix.popup import Popup
+from kivy.uix.label import Label
 
 
 class UndoPopup(Popup):
-    def __init__(self, courses, choices, window):
+    def __init__(self, courses, choices, rules, window):
         super(UndoPopup, self).__init__()
         self.title = 'Undo'
         self.window = window
+        self.rules = rules
         self.size_hint = None, None
         self.size = 700, 500
         self.courses = courses
@@ -29,7 +31,12 @@ class UndoPopup(Popup):
                               height=90 * len(self.courses) + 10 * (len(self.courses) - 1))
         for pnlCourse in self.panels:
             bltCourses.add_widget(pnlCourse)
-        svMain.add_widget(bltCourses)
+        bltRules = BoxLayout()
+        bltRules.add_widget(Label(text=self.rules))
+        bltTotal = BoxLayout(orientation='vertical')
+        bltTotal.add_widget(bltCourses)
+        bltTotal.add_widget(bltRules)
+        svMain.add_widget(bltTotal)
         self.add_widget(svMain)
 
     def on_dismiss(self):

@@ -70,7 +70,6 @@ class Parser(object):
         # domeinen
         strFase = 'Fase = {1..' + str(opleiding.stages) + '}'
         strVak = 'Vak = {'
-        strVakNaam = 'VakNaam = {'
         strVakgroep = 'VakGroep = {'
         strStudiepunten = 'Studiepunten = {0..' + str(opleiding.max) + '}'
 
@@ -83,21 +82,18 @@ class Parser(object):
         strNietGeselecteerd = 'NietGeselecteerd = {'
 
         # functies
-        strHeeftNaam = 'HeeftNaam<ct> = {'
         strInSemester = 'InSemester<ct> = {'
         strMinAantalStudiepunten = 'MinAantalStudiepunten<ct> = {'
         strMaxAantalStudiepunten = 'MaxAantalStudiepunten<ct> = {'
         strAantalStudiepunten = 'AantalStudiepunten<ct> = {'
 
         strVak += opleiding.print_course() + '}'
-        strVakNaam += opleiding.print_course_name() + '}'
         strIsType += opleiding.print_is_type() + '}'
         strVerplicht += opleiding.print_mandatory_courses() + '}'
         strInFase += opleiding.print_in_stage() + '}'
         strInVakgroep += opleiding.print_in_group() + '}'
         strGeselecteerd += opleiding.print_selected() + '}'
         strNietGeselecteerd += opleiding.print_not_interested() + '}'
-        strHeeftNaam += opleiding.print_has_name() + '}'
         strInSemester += opleiding.print_in_term() + '}'
         strMinAantalStudiepunten += opleiding.print_min_ects() + '}'
         strMaxAantalStudiepunten += opleiding.print_max_ects() + '}'
@@ -107,14 +103,12 @@ class Parser(object):
         s = ''
         s += strFase + '\n'
         s += strVak + '\n'
-        s += strVakNaam + '\n'
         s += strVakgroep + '\n'
         s += strStudiepunten + '\n'
         s += strIsType + '\n'
         s += strVerplicht + '\n'
         s += strInFase + '\n'
         s += strInVakgroep + '\n'
-        s += strHeeftNaam + '\n'
         s += strInSemester + '\n'
         s += strMinAantalStudiepunten + '\n'
         s += strMaxAantalStudiepunten + '\n'
@@ -136,7 +130,7 @@ class Parser(object):
         strVerplicht = 'Verplicht = {'
         strInFase = 'InFase = {'
         strInVakgroep = 'InVakGroep = {'
-        strGeselecteerd = 'Geselecteerd = {'
+        strGeselecteerd = 'Geselecteerd<ct> = {'
         strNietGeselecteerd = 'NietGeselecteerd = {'
 
         # functies

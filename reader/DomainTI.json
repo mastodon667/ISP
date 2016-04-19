@@ -9,7 +9,7 @@
         {
           "code": "H04I4A",
           "fases": [1],
-          "naam": "Gedistribueerde_Systemen",
+          "naam": "Gedistribueerde Systemen",
           "punten": 6,
           "semester": 1
         },
@@ -32,7 +32,7 @@
           {
             "code": "G0B23A",
             "fases": [1],
-            "naam": "Modelleren_van_Complexe_Systemen",
+            "naam": "Modelleren van Complexe Systemen",
             "punten": 6,
             "semester": 1
           }
@@ -40,7 +40,7 @@
           {
             "code": "G0B01A",
             "fases": [1],
-            "naam": "Intellectual_Property_Management",
+            "naam": "Intellectual Property Management",
             "punten": 4,
             "semester": 2
           }
@@ -48,7 +48,7 @@
           {
             "code": "D0I69A",
             "fases": [1],
-            "naam": "ICT_Service_Management",
+            "naam": "ICT Service Management",
             "punten": 6,
             "semester": 2
           }
@@ -56,7 +56,7 @@
           {
             "code": "G0K34A",
             "fases": [1],
-            "naam": "Geschiedenis_van_de_Informatica",
+            "naam": "Geschiedenis van de Informatica",
             "punten": 4,
             "semester": 2
           }
@@ -64,7 +64,7 @@
           {
             "code": "C07I6A",
             "fases": [1],
-            "naam": "ICT_recht",
+            "naam": "ICT-recht",
             "punten": 4,
             "semester": 2
           }
@@ -79,28 +79,28 @@
             {
               "code": "H04K5A",
               "fases": [1],
-              "naam": "Development_of_Secure_Software",
+              "naam": "Development of Secure Software",
               "punten": 4,
               "semester": 1
             },
             {
               "code": "H04L5A",
               "fases": [1],
-              "naam": "Vergelijkende_studie_van_Imperatieve_Programmeertalen",
+              "naam": "Vergelijkende studie van Imperatieve Programmeertalen",
               "punten": 6,
               "semester": 1
             },
             {
               "code": "G0K32A",
               "fases": [1],
-              "naam": "Vereisteanalyse_voor_complexe_softwaresystemen",
+              "naam": "Vereisteanalyse voor complexe softwaresystemen",
               "punten": 3,
               "semester": 1
             },
             {
               "code": "H09B5A",
               "fases": [1],
-              "naam": "Software_Architectuur",
+              "naam": "Software Architectuur",
               "punten": 6,
               "semester": 2
             }
@@ -109,28 +109,28 @@
             {
               "code": "H03F0A",
               "fases": [1],
-              "naam": "Technisch_wetenschappelijke_software",
+              "naam": "Technisch-wetenschappelijke software",
               "punten": 6,
               "semester": 1
             },
             {
               "code": "H04L2A",
               "fases": [1],
-              "naam": "Software_for_Real_time_and_Embedded_Systems",
+              "naam": "Software for Real time and Embedded Systems",
               "punten": 4,
               "semester": 1
             },
             {
               "code": "H04G4A",
               "fases": [1],
-              "naam": "Security_of_Network_and_Computer_Infrastructure",
+              "naam": "Security of Network and Computer Infrastructure",
               "punten": 4,
               "semester": 2
             },
             {
               "code": "H04I0A",
               "fases": [1],
-              "naam": "Internet_Infrastructure",
+              "naam": "Internet Infrastructure",
               "punten": 5,
               "semester": 2
             }
@@ -144,35 +144,35 @@
             {
               "code": "G0Q55A",
               "fases": [1],
-              "naam": "Fundamenten_van_mens_machine_interactie",
+              "naam": "Fundamenten van mens-machine interactie",
               "punten": 6,
               "semester": 1
             },
             {
               "code": "G0Q66C",
               "fases": [1],
-              "naam": "Fundamenten_van_Computergrafiek",
+              "naam": "Fundamenten van Computergrafiek",
               "punten": 3,
               "semester": 1
             },
             {
               "code": "H04I2A",
               "fases": [1],
-              "naam": "Informatie_visualisatie",
+              "naam": "Informatie visualisatie",
               "punten": 4,
               "semester": 2
             },
             {
               "code": "G0B36A",
               "fases": [1],
-              "naam": "Computergrafiek_2",
+              "naam": "Computergrafiek 2",
               "punten": 4,
               "semester": 2
             },
             {
               "code": "H07Z5A",
               "fases": [1],
-              "naam": "Computergrafiek_project",
+              "naam": "Computergrafiek: project",
               "punten": 3,
               "semester": 2
             }
@@ -188,21 +188,21 @@
             {
               "code": "H05B9B",
               "fases": [1],
-              "naam": "Advanced_Platform_Architectures_and_Mapping_Methods_for_Embedded_Applications",
+              "naam": "Advanced Platform Architectures and Mapping Methods for Embedded Applications",
               "punten": 3,
               "semester": 1
             },
             {
               "code": "H02A5A",
               "fases": [1],
-              "naam": "Computer_Vision",
+              "naam": "Computer Vision",
               "punten": 4,
               "semester": 2
             },
             {
               "code": "H09J2A",
               "fases": [1],
-              "naam": "Pattern_Recognition_and_Image_Interpretation",
+              "naam": "Pattern Recognition and Image Interpretation",
               "punten": 6,
               "semester": 2
             }
@@ -216,35 +216,35 @@
             {
               "code": "H02D2A",
               "fases": [1],
-              "naam": "Uncertainty_in_Artificial_Intelligence",
+              "naam": "Uncertainty in Artificial Intelligence",
               "punten": 4,
               "semester": 1
             },
             {
               "code": "H02C1A",
               "fases": [1],
-              "naam": "Machine_Learning_and_Inductive_Inference",
+              "naam": "Machine Learning and Inductive Inference",
               "punten": 4,
               "semester": 1
             },
             {
               "code": "H02C8A",
               "fases": [1],
-              "naam": "Text_based_Information_Retrieval",
+              "naam": "Text based Information Retrieval",
               "punten": 4,
               "semester": 2
             },
             {
               "code": "H02A8A",
               "fases": [1],
-              "naam": "Advanced_Programming_Languages_for_AI",
+              "naam": "Advanced Programming Languages for AI",
               "punten": 4,
               "semester": 2
             },
             {
               "code": "H0T25A",
               "fases": [1],
-              "naam": "Machine_Learning_Project",
+              "naam": "Machine Learning: Project",
               "punten": 3,
               "semester": 2
             }
@@ -253,28 +253,28 @@
             {
               "code": "H02B1A",
               "fases": [1],
-              "naam": "Natural_Language_Processing",
+              "naam": "Natural Language Processing",
               "punten": 4,
               "semester": 1
             },
             {
               "code": "G0B34B",
               "fases": [1],
-              "naam": "Knowledge_and_the_Web",
+              "naam": "Knowledge and the Web",
               "punten": 6,
               "semester": 1
             },
             {
               "code": "H02C3A",
               "fases": [1],
-              "naam": "Knowledge_Representation",
+              "naam": "Knowledge Representation",
               "punten": 4,
               "semester": 2
             },
             {
               "code": "H02C6A",
               "fases": [1],
-              "naam": "Data_Mining",
+              "naam": "Data Mining",
               "punten": 4,
               "semester": 2
             }
