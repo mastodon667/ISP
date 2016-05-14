@@ -1,0 +1,22 @@
+type Fase isa int
+type Vak
+type VakGroepType constructed from {AVO,Verdere_Specialisatie,Opleiding,Bachelor_Verbredend,Specialisatie}
+type VakGroep
+type Studiepunten isa int
+type Semester constructed from {Eerste,Tweede,Jaar}
+IsType(VakGroep,VakGroepType)
+Verplicht(Vak,VakGroep)
+InVakGroep(Vak,VakGroep)
+InFase(Vak,Fase)
+Geselecteerd(Vak,Fase)
+NietGeselecteerd(Vak)
+MinAantalStudiepunten(VakGroep):Studiepunten
+MaxAantalStudiepunten(VakGroep):Studiepunten
+AantalStudiepunten(Vak):Studiepunten
+GeselecteerdAantalStudiepuntenPerVakGroep(VakGroep):Studiepunten
+GeselecteerdAantalStudiepuntenPerSemester(Semester,Fase):Studiepunten
+GeselecteerdAantalStudiepuntenTotaal : Studiepunten
+VerschilPerFase(Fase) : Studiepunten
+AbsoluutVerschilPerFase(Fase) : Studiepunten
+InSemester(Vak):Semester
+Evenwicht : Studiepunten
