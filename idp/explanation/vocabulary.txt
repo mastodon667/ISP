@@ -1,0 +1,18 @@
+type Fase isa int
+type Vak
+type VakGroepType constructed from {AVO,Verdere_Specialisatie,Opleiding,Bachelor_Verbredend,Specialisatie}
+type VakGroep
+type Studiepunten isa int
+type Bool constructed from {True,False}
+type Rule isa int
+satisfied(Rule)
+IsType(VakGroep,VakGroepType)
+Verplicht(Vak,VakGroep)
+InVakGroep(Vak,VakGroep)
+InFase(Vak,Fase)
+Geselecteerd(Vak,Fase)
+NietGeselecteerd(Vak)
+MinAantalStudiepunten(VakGroep):Studiepunten
+MaxAantalStudiepunten(VakGroep):Studiepunten
+AantalStudiepunten(Vak):Studiepunten
+GeselecteerdAantalStudiepuntenPerVakGroep(VakGroep):Studiepunten

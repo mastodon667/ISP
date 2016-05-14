@@ -1,0 +1,5 @@
+1:Je moet alle verplichte opleidingsonderdelen van de opleiding selecteren.
+2:Je moet van minstens 1 specialisatie alle verplichte opleidingsonderdelen selecteren.
+3:Je moet van 1 Bachelor verbredend pakket alle opleidingsonderdelen selecteren.
+4:Je hebt niet voor alle vakgroepen tussen het min. en max. aantal studiepunten geselecteerd.
+5:Je moet per fase tussen de 60 en de 66 studiepunten geselecteerd hebben.

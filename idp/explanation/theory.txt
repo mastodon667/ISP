@@ -1,0 +1,13 @@
+satisfied(1) <=> !vg[VakGroep],v[Vak] : IsType(vg,Opleiding) & Verplicht(v,vg) => ?1f[Fase] : InFase(v,f) & Geselecteerd(v,f).
+satisfied(2) <=> !vg[VakGroep] : IsType(vg,Specialisatie) => ?vg1[VakGroep] : IsType(vg1,Specialisatie) & !v[Vak] : Verplicht(v,vg1) => ?1f[Fase] : InFase(v,f) & Geselecteerd(v,f).
+satisfied(3) <=> !vg[VakGroep] : IsType(vg,Bachelor_Verbredend) => ?vg1[VakGroep] : IsType(vg1,Bachelor_Verbredend) & !v[Vak] : Verplicht(v,vg1) => ?1f[Fase] : InFase(v,f) & Geselecteerd(v,f).
+!vg[VakGroep] : IsType(vg,Opleiding) => GeselecteerdAantalStudiepuntenPerVakGroep(vg) = sum{v[Vak], sp[Studiepunten],f[Fase] : Geselecteerd(v,f) & AantalStudiepunten(v)=sp : sp }.
+!vg[VakGroep] : IsType(vg,Verdere_Specialisatie) => GeselecteerdAantalStudiepuntenPerVakGroep(vg) = sum{v[Vak], sp[Studiepunten],f[Fase], vg1[VakGroep] : (InVakGroep(v,vg) | (InVakGroep(v,vg1) & IsType(vg1,Specialisatie))) & Geselecteerd(v,f) & AantalStudiepunten(v)=sp : sp }.
+!vg[VakGroep] : IsType(vg,AVO) => GeselecteerdAantalStudiepuntenPerVakGroep(vg) = sum{v[Vak], sp[Studiepunten],f[Fase] : InVakGroep(v,vg) & Geselecteerd(v,f) & AantalStudiepunten(v)=sp : sp }.
+satisfied(4) <=> !vg[VakGroep] : MaxAantalStudiepunten(vg) > 0 => MinAantalStudiepunten(vg) =< GeselecteerdAantalStudiepuntenPerVakGroep(vg) =< MaxAantalStudiepunten(vg).
+satisfied(5) <=> !f[Fase] : 60 =< sum{v[Vak],s[Studiepunten] : Geselecteerd(v,f) & AantalStudiepunten(v)=s : s} =< 66.
+!vg[VakGroep] : IsType(vg,Opleiding) => GeselecteerdAantalStudiepuntenPerVakGroep(vg) = sum{v[Vak], sp[Studiepunten],f[Fase] : Geselecteerd(v,f) & AantalStudiepunten(v)=sp : sp }.
+!vg[VakGroep] : IsType(vg,Verdere_Specialisatie) => GeselecteerdAantalStudiepuntenPerVakGroep(vg) = sum{v[Vak], sp[Studiepunten],f[Fase], vg1[VakGroep] : (InVakGroep(v,vg) | (InVakGroep(v,vg1) & IsType(vg1,Specialisatie))) & Geselecteerd(v,f) & AantalStudiepunten(v)=sp : sp }.
+!vg[VakGroep] : IsType(vg,AVO) => GeselecteerdAantalStudiepuntenPerVakGroep(vg) = sum{v[Vak], sp[Studiepunten],f[Fase] : InVakGroep(v,vg) & Geselecteerd(v,f) & AantalStudiepunten(v)=sp : sp }.
+!vg[VakGroep] : IsType(vg,Specialisatie) | IsType(vg,Bachelor_Verbredend) => GeselecteerdAantalStudiepuntenPerVakGroep(vg) = 0.
+!v[Vak] : NietGeselecteerd(v) => ~?f[Fase] : Geselecteerd(v,f).

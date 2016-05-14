@@ -1,0 +1,2 @@
+Rule = {1..5}
+satisfied = {1..5}
