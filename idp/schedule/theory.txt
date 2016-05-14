@@ -1,0 +1,2 @@
+ !l1[Les],l2[Les] : l1 = l2 => overlap(l1,l2) = 0.
+ !l1[Les],l2[Les] : l1 ~= l2 => overlap(l1,l2) = max{ o : o = 0 | o = (min{e[Slot] : eindigt(l1,e) | eindigt(l2,e) : e} - max{s[Slot] : start(l1,s) | start(l2,s) : s}) : o}.

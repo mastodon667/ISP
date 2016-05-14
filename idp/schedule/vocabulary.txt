@@ -1,0 +1,9 @@
+type Vak
+//halfuur = 1 slot, 26 sloten/dag, 130 sloten/week
+type Slot isa int
+type Les
+    
+heeftLes(Vak,Les)
+start(Les,Slot)
+eindigt(Les,Slot)
+overlap(Les,Les) : int
