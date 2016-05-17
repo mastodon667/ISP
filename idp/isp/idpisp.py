@@ -1,4 +1,7 @@
-IDP_LOCATION = "/usr/local/bin/idp"
+#IDP_LOCATION = '/usr/local/bin/idp'
+IDP_LOCATION = 'C:/Program Files/idp 3.5.0/bin/idp.bat'
+#LOCATION = '/home/herbert/PycharmProjects/Thesis/idp/'
+LOCATION = 'C:/Users/Herbert/PycharmProjects/ISP/'
 
 from subprocess import Popen, PIPE
 
@@ -8,24 +11,24 @@ class IDPISP(object):
     def __init__(self):
         self.pwd = IDP_LOCATION
         self.inferences = dict()
-        with open('/home/herbert/PycharmProjects/Thesis/idp/isp/inference.txt') as data:
+        with open(LOCATION + 'idp/isp/inference.txt') as data:
             for line in data:
                 name, code = line.split(';')
                 self.inferences[name] = code
         self.unsatvoc = ''
-        with open('/home/herbert/PycharmProjects/Thesis/idp/isp/unsatvoc.txt') as data:
+        with open(LOCATION + 'idp/isp/unsatvoc.txt') as data:
             for line in data:
                 self.unsatvoc += line + '\n'
         self.vocabulary = ''
-        with open('/home/herbert/PycharmProjects/Thesis/idp/isp/vocabulary.txt') as data:
+        with open(LOCATION + 'idp/isp/vocabulary.txt') as data:
             for line in data:
                 self.vocabulary += line + '\n'
         self.theory = ''
-        with open('/home/herbert/PycharmProjects/Thesis/idp/isp/theory.txt') as data:
+        with open(LOCATION + 'idp/isp/theory.txt') as data:
             for line in data:
                 self.theory += line + '\n'
         self.terms = dict()
-        with open('/home/herbert/PycharmProjects/Thesis/idp/isp/terms.txt') as data:
+        with open(LOCATION + 'idp/isp/terms.txt') as data:
             for line in data:
                 name, rule = line.split(';')
                 self.terms[name] = rule
@@ -39,7 +42,14 @@ class IDPISP(object):
         inp += 'Structure S : V { \n'
         inp += structure + '\n}\n\n'
         inp += 'Procedure main() { \n'
-        inp += self.inferences.get(inference) + '\n}\n\n'
+        inp += 'start_time = os.time() \n'
+        inp += self.inferences.get(inference) + '\n'
+        inp += 'end_time = os.time() \n'
+        inp += 'elapsed_time = os.difftime(end_time,start_time) \n'
+        inp += 'file = io.open(\"' + LOCATION + 'idp/isp/time.txt\", "a") \n'
+        inp += 'file:write(\"' + inference + ' - \" .. elapsed_time,\"\\n\") \n'
+        inp += '}\n'
+        print(inp)
         return inp
 
     def sat(self, structure):

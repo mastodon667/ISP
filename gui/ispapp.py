@@ -10,11 +10,11 @@ from reader.parser import Parser
 
 class IspApp(App):
 
-    def __init__(self, url, stages):
+    def __init__(self, location, file, stages):
         super(IspApp, self).__init__()
-        self.url = url
+        self.url = location + file
         self.accordion = Accordion()
-        self.pnlCalendar = CalendarPanel(stages)
+        self.pnlCalendar = CalendarPanel(stages, location)
 
     def build(self):
         Window.size = (1400, 800)
@@ -35,9 +35,11 @@ class IspApp(App):
 
 
 def main():
+    location = 'C:/Users/Herbert/PycharmProjects/ISP/'
+    #location = '/home/herbert/PycharmProjects/Thesis/'
     parser = Parser()
-    edj = parser.read('/home/herbert/PycharmProjects/Thesis/reader/DomainTI.json')
-    isp = IspApp('/home/herbert/PycharmProjects/Thesis/reader/DomainTI.json', edj.stages)
+    edj = parser.read(location + 'reader/DomainTI.json')
+    isp = IspApp(location, 'reader/DomainTI.json', edj.stages)
     isp.run()
 
 if __name__ == "__main__":

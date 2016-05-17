@@ -1,4 +1,7 @@
-IDP_LOCATION = "/usr/local/bin/idp"
+#IDP_LOCATION = '/usr/local/bin/idp'
+IDP_LOCATION = 'C:/Program Files/idp 3.5.0/bin/idp.bat'
+#LOCATION = '/home/herbert/PycharmProjects/Thesis/idp/'
+LOCATION = 'C:/Users/Herbert/PycharmProjects/ISP/'
 
 from subprocess import Popen, PIPE
 
@@ -8,24 +11,24 @@ class IDPExplanation(object):
     def __init__(self):
         self.pwd = IDP_LOCATION
         self.inferences = dict()
-        with open('/home/herbert/PycharmProjects/Thesis/idp/explanation/inference.txt') as data:
+        with open(LOCATION + 'idp/explanation/inference.txt') as data:
             for line in data:
                 name, code = line.split(';')
                 self.inferences[name] = code
         self.vocabulary = ''
-        with open('/home/herbert/PycharmProjects/Thesis/idp/explanation/vocabulary.txt') as data:
+        with open(LOCATION + 'idp/explanation/vocabulary.txt') as data:
             for line in data:
                 self.vocabulary += line + '\n'
         self.theory = ''
-        with open('/home/herbert/PycharmProjects/Thesis/idp/explanation/theory.txt') as data:
+        with open(LOCATION + 'idp/explanation/theory.txt') as data:
             for line in data:
                 self.theory += line + '\n'
         self.unsatstruc = ''
-        with open('/home/herbert/PycharmProjects/Thesis/idp/explanation/unsatstruc.txt') as data:
+        with open(LOCATION + 'idp/explanation/unsatstruc.txt') as data:
             for line in data:
                 self.unsatstruc += line + '\n'
         self.unsatvoc = ''
-        with open('/home/herbert/PycharmProjects/Thesis/idp/explanation/unsatvoc.txt') as data:
+        with open(LOCATION + 'idp/explanation/unsatvoc.txt') as data:
             for line in data:
                 self.unsatvoc += line + '\n'
 

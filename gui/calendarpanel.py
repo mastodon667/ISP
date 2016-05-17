@@ -2,7 +2,6 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.scrollview import ScrollView
 from kivy.uix.label import Label
 from kivy.uix.button import Button
-
 from kivycalendar import CalendarWidget
 from gui.daypanel import DayPanel
 from data.schedule import CompleteSchedule
@@ -13,12 +12,12 @@ from reader.overlapparser import Parser
 
 class CalendarPanel(BoxLayout):
 
-    def __init__(self, stages):
+    def __init__(self, stages, location):
         super(CalendarPanel, self).__init__()
         self.calendar = CalendarWidget()
         self.calendar.bind(active_date=self.change_day)
         self.completeSchedule = CompleteSchedule(stages)
-        self.roster = Roster('/home/herbert/PycharmProjects/Thesis/reader/', ['msti.txt','mscw.txt','mscs.txt'], 'shadowcourses.txt') #TODO: CHANGE
+        self.roster = Roster(location + 'reader/', ['msti.txt','mscw.txt','mscs.txt'], 'shadowcourses.txt') #TODO: CHANGE
         self.idpSchedule = IDPSchedule()
         self.svDay = ScrollView()
         self.svBottomRight = ScrollView()

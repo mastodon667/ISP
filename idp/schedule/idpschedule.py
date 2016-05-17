@@ -1,4 +1,7 @@
-IDP_LOCATION = "/usr/local/bin/idp"
+#IDP_LOCATION = '/usr/local/bin/idp'
+IDP_LOCATION = 'C:/Program Files/idp 3.5.0/bin/idp.bat'
+#LOCATION = '/home/herbert/PycharmProjects/Thesis/idp/'
+LOCATION = 'C:/Users/Herbert/PycharmProjects/ISP/'
 
 from subprocess import Popen, PIPE
 
@@ -8,20 +11,20 @@ class IDPSchedule(object):
     def __init__(self):
         self.pwd = IDP_LOCATION
         self.inferences = dict()
-        with open('/home/herbert/PycharmProjects/Thesis/idp/schedule/inference.txt') as data:
+        with open(LOCATION + 'idp/schedule/inference.txt') as data:
             for line in data:
                 name, code = line.split(';')
                 self.inferences[name] = code
         self.vocabulary = ''
-        with open('/home/herbert/PycharmProjects/Thesis/idp/schedule/vocabulary.txt') as data:
+        with open(LOCATION + 'idp/schedule/vocabulary.txt') as data:
             for line in data:
                 self.vocabulary += line + '\n'
         self.theory = ''
-        with open('/home/herbert/PycharmProjects/Thesis/idp/schedule/theory.txt') as data:
+        with open(LOCATION + 'idp/schedule/theory.txt') as data:
             for line in data:
                 self.theory += line + '\n'
         self.terms = dict()
-        with open('/home/herbert/PycharmProjects/Thesis/idp/schedule/terms.txt') as data:
+        with open(LOCATION + 'idp/schedule/terms.txt') as data:
             for line in data:
                 name, rule = line.split(';')
                 self.terms[name] = rule
