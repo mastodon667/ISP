@@ -6,12 +6,13 @@ class Automaton(object):
         self.selection = dict()
         self.interpretations = list()
         self.restorations = set()
+        self.build(initialState)
 
     def build(self, state):
-        if state.getVariable() != '':
-            self.insertState(state)
-        else:
+        if state.getVariable() is '':
             self.finalState = state
+        else:
+            self.insertState(state)
         for t in state.getoTransitions():
             self.build(t.getTo())
 
@@ -50,15 +51,15 @@ class Automaton(object):
 
     def develop(self, state, e, relax):
         if state == self.finalState:
-            self.interpretations.append(e.trim())
-            self.restorations.append(relax.trim())
+            self.interpretations.append(e.lstrip())
+            self.restorations.add(relax.lstrip())
         h = state.getVariable()
         for transition in state.getoTransitions():
             if transition.isOptimal():
                 if transition.getWeight() > 0:
                     self.develop(transition.getTo(), e + ' ' + h + ' - /', relax + ' ' + h)
                 else:
-                    self.develop(trnasition.getTo(), e + ' ' + h + ' - ' + transition.getVal(), relax)
+                    self.develop(transition.getTo(), e + ' ' + h + ' - ' + transition.getVal(), relax)
 
     def isConsistent(self):
         return self.finalState.getlCost() == 0

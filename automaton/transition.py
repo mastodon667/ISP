@@ -3,7 +3,7 @@ class Transition(object):
     def __init__(self, val, to):
         self.val = val
         self.setTo(to)
-        self.weight(0)
+        self.weight = 0
 
     def setTo(self, to):
         self.to = to

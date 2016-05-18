@@ -3,7 +3,7 @@ __author__ = 'Herbert'
 class State(object):
 
     def __init__(self, variable, importance):
-        self.variable = variable
+        self.variable = '' + variable
         self.importance = importance
         self.lCost = 0
         self.rCost = 0
@@ -80,7 +80,7 @@ class State(object):
     def calculatelCost(self):
         cost = 1000 #WARNING: MAY CAUSE ERRORS
         for transition in self.iTransitions:
-            c = t.getlCost()
+            c = transition.getlCost()
             if c < cost:
                 cost = c
         return cost
@@ -88,7 +88,7 @@ class State(object):
     def calculaterCost(self):
         cost = 1000 #WARNING: MAY CAUSE ERRORS
         for transition in self.oTransitions:
-            c = t.getrCost()
+            c = transition.getrCost()
             if c < cost:
                 cost = c
         return cost
