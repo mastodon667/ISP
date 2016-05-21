@@ -4,7 +4,7 @@ IDP_LOCATION = 'C:/Program Files/idp 3.5.0/bin/idp.bat'
 LOCATION = 'C:/Users/Herbert/PycharmProjects/ISP/'
 
 from subprocess import Popen, PIPE
-
+import time
 
 class IDPISP(object):
 
@@ -42,14 +42,8 @@ class IDPISP(object):
         inp += 'Structure S : V { \n'
         inp += structure + '\n}\n\n'
         inp += 'Procedure main() { \n'
-        inp += 'start_time = os.time() \n'
         inp += self.inferences.get(inference) + '\n'
-        inp += 'end_time = os.time() \n'
-        inp += 'elapsed_time = os.difftime(end_time,start_time) \n'
-        inp += 'file = io.open(\"' + LOCATION + 'idp/isp/time.txt\", "a") \n'
-        inp += 'file:write(\"' + inference + ' - \" .. elapsed_time,\"\\n\") \n'
         inp += '}\n'
-        print(inp)
         return inp
 
     def sat(self, structure):
@@ -77,6 +71,9 @@ class IDPISP(object):
         return self.open(inp)
 
     def open(self, inp):
+        ts = time.time()
         idp = Popen(self.pwd, stdin=PIPE, stdout=PIPE)
         out, err = idp.communicate(inp)
+        te = time.time()
+        print(str(te-ts))
         return out

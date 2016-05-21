@@ -3,7 +3,7 @@ __author__ = 'Herbert'
 class State(object):
 
     def __init__(self, variable, importance):
-        self.variable = '' + variable
+        self.variable = variable
         self.importance = importance
         self.lCost = 0
         self.rCost = 0
@@ -39,7 +39,7 @@ class State(object):
 
     def update(self, val):
         for transition in self.oTransitions:
-            if val != transition.getVal():
+            if val is not transition.getVal():
                 transition.setWeight(self.importance)
             else:
                 transition.setWeight(0)
@@ -66,7 +66,7 @@ class State(object):
             for transition in self.oTransitions:
                 if transition.getVal() == char:
                     if transition.getCost() == 0:
-                        t+=1
+                        t += 1
             self.counts[char] = t
 
     def recalculatelCost(self):

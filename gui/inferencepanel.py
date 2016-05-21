@@ -18,9 +18,10 @@ from gui.elements import TotalLayout, HistoryLabel, ActLabel
 
 class InferencePanel(BoxLayout):
 
-    def __init__(self, url, panel):
+    def __init__(self, url, panel, automaton):
         super(InferencePanel, self).__init__()
         self.history = list()
+        self.automaton = automaton
         self.panel = panel
         self.callback = False
         self.updater = Updater()
@@ -53,12 +54,10 @@ class InferencePanel(BoxLayout):
             self.dbOptions.add_widget(btnTerm)
         self.dbOptions.bind(on_select=lambda instance, x: setattr(self.btnSelect, 'text', x))
         btnDistri = Button(size_hint_y=None, height=30, text='ECTS Stats', on_release=self.show_distribution_popup)
-        btnExplain = Button(size_hint_y=None, height=30, text='Explain', on_release=self.explain)
         bltBottom.add_widget(btnExpand)
         bltBottom.add_widget(btnOptimize)
         bltBottom.add_widget(self.btnSelect)
         bltBottom.add_widget(btnDistri)
-        bltBottom.add_widget(btnExplain)
         svMain.add_widget(self.pnlProgramme)
         bltCenter.add_widget(svMain)
         bltCenter.add_widget(bltBottom)

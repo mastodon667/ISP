@@ -6,16 +6,15 @@ class Automaton(object):
         self.selection = dict()
         self.interpretations = list()
         self.restorations = set()
-        self.build(initialState)
+        self.build(self.initialState)
 
     def build(self, state):
-        if state.getVariable() is '':
+        if state.getVariable() == '':
             self.finalState = state
         else:
             self.insertState(state)
         for t in state.getoTransitions():
             self.build(t.getTo())
-
 
     def insertState(self, state):
         key = state.getVariable()
@@ -50,7 +49,7 @@ class Automaton(object):
             i+=1
 
     def develop(self, state, e, relax):
-        if state == self.finalState:
+        if state is self.finalState:
             self.interpretations.append(e.lstrip())
             self.restorations.add(relax.lstrip())
         h = state.getVariable()
