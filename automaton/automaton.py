@@ -16,6 +16,9 @@ class Automaton(object):
         for t in state.getoTransitions():
             self.build(t.getTo())
 
+    def getSelection(self, key):
+        return self.selection[key]
+
     def insertState(self, state):
         key = state.getVariable()
         if key not in self.states:
@@ -24,6 +27,8 @@ class Automaton(object):
             self.states[key].append(state)
 
     def addSelection(self, key, val):
+        if key in self.selection:
+            self.removeSelection(key)
         self.selection[key] = val
         for state in self.states[key]:
             state.update(val)
@@ -39,14 +44,20 @@ class Automaton(object):
     def getFinalState(self):
         return self.finalState
 
-    def showRestoration(self):
-        i = 1
-        for restoration in self.restorations:
-            print('Solution ' + str(i))
-            for key in restoration.split(' '):
-                print('UNDO: ' + key + ' - ' + self.selection[key])
-                print('------------')
-            i+=1
+    def calculateRestorations(self):
+        self.interpretations = list()
+        self.restorations = set()
+        self.develop(self.initialState, '', '')
+        return self.restorations
+
+    #def showRestoration(self):
+    #    i = 1
+    #    for restoration in self.restorations:
+    #        print('Solution ' + str(i))
+    #        for key in restoration.split(' '):
+    #            print('UNDO: ' + key + ' - ' + self.selection[key])
+    #            print('------------')
+    #        i+=1
 
     def develop(self, state, e, relax):
         if state is self.finalState:

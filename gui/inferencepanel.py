@@ -26,7 +26,7 @@ class InferencePanel(BoxLayout):
         self.callback = False
         self.updater = Updater()
         self.parser = Parser()
-        self.explantationParser = ExplanationParser()
+        self.explanationParser = ExplanationParser()
         self.programme_main = self.parser.read(url)
         self.programme_temp = self.programme_main.clone()
         self.programme_init = self.programme_main.clone()
@@ -69,19 +69,29 @@ class InferencePanel(BoxLayout):
         bltAll.add_widget(bltRight)
         self.add_widget(bltAll)
 
-    def explain(self, *args):
-        i = self.explanation.unsat(self.parser.print_explanation(self.programme_main))
-        r = self.explantationParser.find_broken_rules(i)
+    def explain(self, programme):
+        i = self.explanation.unsat(self.parser.print_explanation(programme))
+        r = self.explanationParser.find_broken_rules(i)
         return r
 
     def update(self, choices):
         if self.callback:
-            programme = self.build_programme(choices)
-            if self.idp.sat(self.parser.print_domain(programme)):
+            for choice in choices:
+                self.update_choice(choice)
+            if self.automaton.isConsistent():
                 self.step(choices)
             else:
+                programme = self.build_programme(choices)
                 self.show_unsat_popup(programme, choices)
-                self.explain()
+
+    def update_choice(self, choice):
+        if choice.not_interested:
+            self.automaton.addSelection(choice.code, str(0))
+        else:
+            if choice.selected is not None:
+                self.automaton.addSelection(choice.code, str(choice.selected))
+            else:
+                self.automaton.removeSelection(str(choice.code))
 
     def propagate(self, programme):
         i = self.parser.print_domain(programme)
@@ -170,11 +180,13 @@ class InferencePanel(BoxLayout):
                 ppUndoAction.open()
 
     def show_unsat_popup(self, programme, choices):
-        t = self.updater.get_unsat(self.idp.unsat(self.parser.print_domain(programme)))
-        courses = list()
-        for code in t:
-            courses.append(self.programme_main.get_course(code))
-        ppUndo = UndoPopup(courses, choices, self.explain(), self)
+        solutions = list()
+        for sol in self.automaton.calculateRestorations():
+            sols = dict()
+            for code in sol.split(' '):
+                sols[code] = self.automaton.getSelection(code)
+            solutions.append(sols)
+        ppUndo = UndoPopup(solutions, choices, self.explain(programme), self)
         ppUndo.open()
 
     def show_distribution_popup(self, *args):

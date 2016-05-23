@@ -8,12 +8,12 @@ from gui.calendarpanel import CalendarPanel
 from reader.parser import Parser
 from automaton.reader import Reader
 
-
 class IspApp(App):
 
-    def __init__(self, location, file, stages):
+    def __init__(self, location, file, stages, automaton):
         super(IspApp, self).__init__()
         self.url = location + file
+        self.automaton = automaton
         self.accordion = Accordion()
         self.pnlCalendar = CalendarPanel(stages, location)
 
@@ -22,7 +22,8 @@ class IspApp(App):
         bltAll = AllLayout()
         bltCenter = BoxLayout()
         aciInf = AccordionItem(title='ISP Selection')
-        aciInf.add_widget(InferencePanel(self.url, self))
+        aciInf.add_widget(InferencePanel(self.url, self, self.automaton))
+        self.automaton = None
         aciCal = AccordionItem(title='Calendar')
         aciCal.add_widget(self.pnlCalendar)
         self.accordion.add_widget(aciInf)
@@ -42,6 +43,7 @@ def main():
     edj = parser.read(location + 'reader/DomainTI.json')
     r = Reader()
     isp = IspApp(location, 'reader/DomainTI.json', edj.stages, r.getAutomaton())
+    r = None
     isp.run()
 
 if __name__ == "__main__":
