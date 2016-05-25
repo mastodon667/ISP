@@ -17,24 +17,23 @@ class UndoPopup(Popup):
         self.choices = dict()
         self.choices = choices
         self.panels = list()
-        i = 1
-        for solution in self.solutions:
-            self.panels.append(SolutionsPanel(solution, i, 'sol'))
-            i += 1
         self.build()
 
     def build(self):
         svMain = ScrollView()
-        height = 0
-        for pnlSol in self.panels:
-            height += pnlSol.height + 10
-        bltSolutions = BoxLayout(orientation='vertical', spacing=10, size_hint_y=None,
-                              height=height-10)
-        for pnlCourse in self.panels:
-            bltSolutions.add_widget(pnlCourse)
-        bltRules = BoxLayout()
+        bltSolutions = BoxLayout(orientation='vertical', spacing=10, size_hint_y=None)
+        h = -10
+        i = 1
+        for solution in self.solutions:
+            pnlSol = SolutionsPanel(solution, i, 'sol')
+            h += pnlSol.height+10
+            bltSolutions.add_widget(pnlSol)
+            self.panels.append(pnlSol)
+            i += 1
+        bltSolutions.height = h
+        bltRules = BoxLayout(size_hint_y=None, height=50)
         bltRules.add_widget(Label(text=self.rules))
-        bltTotal = BoxLayout(orientation='vertical')
+        bltTotal = BoxLayout(orientation='vertical', size_hint_y=None, height=h+50)
         bltTotal.add_widget(bltSolutions)
         bltTotal.add_widget(bltRules)
         svMain.add_widget(bltTotal)

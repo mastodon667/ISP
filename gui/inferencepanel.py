@@ -14,14 +14,16 @@ from gui.distributionpopup import DistributionPopup
 from gui.propagationpopup import PropagationPopup
 from gui.undoactionpopup import UndoActionPopup
 from gui.elements import TotalLayout, HistoryLabel, ActLabel
+from automaton.reader import Reader
 
 
 class InferencePanel(BoxLayout):
 
-    def __init__(self, url, panel, automaton):
+    def __init__(self, url, panel):
         super(InferencePanel, self).__init__()
         self.history = list()
-        self.automaton = automaton
+        r = Reader()
+        self.automaton = r.getAutomaton()
         self.panel = panel
         self.callback = False
         self.updater = Updater()
@@ -82,7 +84,8 @@ class InferencePanel(BoxLayout):
                 self.step(choices)
             else:
                 programme = self.build_programme(choices)
-                self.show_unsat_popup(programme, choices)
+                solutions = self.calculate_solutions()
+                self.show_unsat_popup(programme, choices, solutions)
 
     def update_choice(self, choice):
         if choice.not_interested:
@@ -179,13 +182,17 @@ class InferencePanel(BoxLayout):
                 ppUndoAction = UndoActionPopup(action, self)
                 ppUndoAction.open()
 
-    def show_unsat_popup(self, programme, choices):
+    def calculate_solutions(self):
         solutions = list()
-        for sol in self.automaton.calculateRestorations():
+        res = self.automaton.calculateRestorations()
+        for sol in res:
             sols = dict()
             for code in sol.split(' '):
                 sols[code] = self.automaton.getSelection(code)
             solutions.append(sols)
+        return solutions
+
+    def show_unsat_popup(self, programme, choices, solutions):
         ppUndo = UndoPopup(solutions, choices, self.explain(programme), self)
         ppUndo.open()
 
