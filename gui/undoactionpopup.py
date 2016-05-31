@@ -19,13 +19,14 @@ class UndoActionPopup(Popup):
 
     def build(self):
         svMain = ScrollView()
-        h = 60+len(self.action.choices)*30 + len(self.action.propagations)*30
+        h = 60+len(self.action.choices)*30 + len(self.action.get_propagations())*30
         bltMain = BoxLayout(orientation='vertical', size_hint_y=None, height=h)
         bltMain.add_widget(Label(text='Keuze gebruiker:', size_hint_y=None, height=30))
         for course in self.action.choices:
             bltMain.add_widget(Label(text=str(course), size_hint_y=None, height=30))
         bltMain.add_widget(Label(text='Propagaties:', size_hint_y=None, height=30))
-        for course in self.action.propagations:
+        propagations = self.action.get_propagations()
+        for course in propagations:
             bltItem = BoxLayout(size_hint_y=None, height=30)
             bltItem.add_widget(Label(text=str(course), size_hint_y=None, height=30))
             cbxItem = CheckBox(id=course.code)
@@ -39,7 +40,7 @@ class UndoActionPopup(Popup):
         courses = list()
         for box in self.boxes:
             if box.state == 'down':
-                for course in self.action.propagations:
+                for course in self.action.get_propagations():
                     if course.code == box.id:
                         courses.append(course)
         self.window.update(courses)

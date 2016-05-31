@@ -17,7 +17,7 @@ class CoursePanel(BoxLayout):
         self.panel = panel
         self.term = course.term
         self.tbtnSelect = ToggleButton(size_hint=(None, None), size=(200, 40),
-                                       text='Not Interested', on_release=self.toggle_not_interested)
+                                       text='Geen Interesse', on_release=self.toggle_not_interested)
         self.stagePanels = list()
         self.course = course
         self.build()

@@ -73,6 +73,18 @@
             points: self.x+self.width-203, self.y, self.x+self.width-203, self.y+self.height
             width: 3
 
+<CompleteLayout>:
+    spacing: 6
+    canvas.before:
+        Color:
+            rgba: .38, .38, .38, 1
+        Line:
+            points: self.x+403, self.y, self.x+403, self.y+self.height
+            width: 3
+        Line:
+            points: self.x, self.y+self.height-403, self.x+self.width, self.y+self.height-403
+            width: 3
+
 <ActLabel>:
     size_hint_y: None
     height: 30

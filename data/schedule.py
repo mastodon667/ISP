@@ -13,6 +13,13 @@ class CourseSchedule(object):
         self.classes.append(c)
         self.weeks.add(c.week)
 
+    def get_total_duration(self, week):
+        duration = 0
+        for c in self.classes:
+            if c.week == week:
+                duration += c.get_duration()
+        return duration
+
     def print_classes(self, week):
         s = ''
         for c in self.classes:
@@ -54,6 +61,23 @@ class StageSchedule(object):
     def remove_schedule(self, code):
         if code in self.courseSchedules.keys():
             self.courseSchedules.pop(code)
+
+    def busiest_week(self, term):
+        week_start = 27
+        week_stop = 52
+        if term == 2:
+            week_start = 1
+            week_stop = 26
+        week = week_start
+        duration = 0
+        for i in range(week_start, week_stop+1):
+            d = 0
+            for cs in self.courseSchedules.values():
+                d += cs.get_total_duration(i)
+            if d >= duration:
+                week = i
+                duration = d
+        return week
 
     def get_schedules(self):
         return self.courseSchedules.values()
@@ -106,16 +130,14 @@ class CompleteSchedule(object):
         for stageSchedule in self.stageSchedules.values():
             stageSchedule.remove_schedule(code)
 
-    def get_schedules(self):
-        l = list()
-        for stageSchedule in self.stageSchedules.values():
-            l = l + stageSchedule.get_schedules()
-        return l
+    def get_stages(self):
+        return self.stageSchedules.keys()
+
+    def get_schedules(self, stage):
+        return self.stageSchedules[stage].get_schedules()
 
     def print_structure(self, stage, term):
-        week = 45
-        if term == 2:
-            week = 10
+        week = self.stageSchedules.get(stage).busiest_week(term)
         strVak = 'Vak = {'
         strSlot = 'Slot = {1..130}'
         strLes = 'Les = {'

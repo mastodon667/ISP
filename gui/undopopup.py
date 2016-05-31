@@ -6,7 +6,7 @@ from kivy.uix.label import Label
 
 
 class UndoPopup(Popup):
-    def __init__(self, solutions, choices, rules, window):
+    def __init__(self, solutions, choices, all_choices, rules, window):
         super(UndoPopup, self).__init__()
         self.title = 'Undo'
         self.window = window
@@ -15,6 +15,7 @@ class UndoPopup(Popup):
         self.size = 700, 500
         self.solutions = solutions
         self.choices = dict()
+        self.all_choices = all_choices
         self.choices = choices
         self.panels = list()
         self.build()
@@ -39,9 +40,25 @@ class UndoPopup(Popup):
         svMain.add_widget(bltTotal)
         self.add_widget(svMain)
 
+    def get_sol(self):
+        for pnlSol in self.panels:
+            if pnlSol.cbxSelect.state == 'down':
+                return pnlSol.solution
+
+    def in_new_choices(self, code):
+        for choice in self.choices:
+            if code == choice.code:
+                return True
+        return False
+
     def on_dismiss(self):
-        for course in self.courses:
-            c = self.backup.get(course.code)
-            if (course.selected != c.selected) or (course.not_interested != c.not_interested):
-                self.choices[course.code] = course
-        self.window.update(self.choices.values())
+        sol = self.get_sol()
+        for choice in self.all_choices:
+            if choice.code in sol:
+                if not self.in_new_choices(choice.code):
+                    self.choices.append(choice)
+        for choice in self.choices:
+            if choice.code in sol:
+                choice.not_interested = False
+                choice.selected = None
+        self.window.update(self.choices)

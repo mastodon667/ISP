@@ -4,7 +4,7 @@ IDP_LOCATION = 'C:/Program Files/idp 3.5.0/bin/idp.bat'
 LOCATION = 'C:/Users/Herbert/PycharmProjects/ISP/'
 
 from subprocess import Popen, PIPE
-
+import time
 
 class IDPSchedule(object):
 
@@ -52,6 +52,10 @@ class IDPSchedule(object):
         return self.open(inp)
 
     def open(self, inp):
+        ts = time.time()
         idp = Popen(self.pwd, stdin=PIPE, stdout=PIPE)
         out, err = idp.communicate(inp)
+        te = time.time()
+        with open(LOCATION + 'reader/results.txt', 'a') as file:
+            file.write('schedule - ' + str(te - ts) + '\n')
         return out

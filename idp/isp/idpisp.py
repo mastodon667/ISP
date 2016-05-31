@@ -6,6 +6,7 @@ LOCATION = 'C:/Users/Herbert/PycharmProjects/ISP/'
 from subprocess import Popen, PIPE
 import time
 
+
 class IDPISP(object):
 
     def __init__(self):
@@ -48,32 +49,37 @@ class IDPISP(object):
 
     def sat(self, structure):
         inp = self.build(structure, 'sat')
-        return 'true' in self.open(inp)
+        return 'true' in self.open(inp, 'sat', '')
 
     def unsat(self, structure):
         inp = self.build(structure, 'unsat')
         inp += 'vocabulary U { \n'
         inp += self.unsatvoc + '\n}\n\n'
-        return self.open(inp)
+        return self.open(inp, 'unsat', '')
 
     def expand(self, structure):
         inp = self.build(structure, 'expansion')
-        return self.open(inp)
+        return self.open(inp, 'expansion', '')
+
+    def confirm(self, structure):
+        inp = self.build(structure, 'confirm')
+        return self.open(inp, 'confirm')
 
     def propagate(self, structure):
         inp = self.build(structure, 'propagation')
-        return self.open(inp)
+        return self.open(inp, 'propagation', '')
 
     def minimize(self, term, structure):
         inp = self.build(structure, 'minimization')
         inp += 'Term O : V { \n'
         inp += self.terms.get(term) + '\n}\n\n'
-        return self.open(inp)
+        return self.open(inp, 'minimization', '('+term+')')
 
-    def open(self, inp):
+    def open(self, inp, inference, term):
         ts = time.time()
         idp = Popen(self.pwd, stdin=PIPE, stdout=PIPE)
         out, err = idp.communicate(inp)
         te = time.time()
-        print(str(te-ts))
+        with open(LOCATION + 'reader/results.txt', 'a') as file:
+            file.write(inference + term + ' - ' + str(te-ts) + '\n')
         return out

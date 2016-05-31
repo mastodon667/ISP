@@ -1,2 +1,2 @@
 extern V::Geselecteerd/2
-extern V::NietGeselecteerd/1
+extern V::GeenInteresse/1

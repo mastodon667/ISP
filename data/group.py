@@ -151,21 +151,19 @@ class Group(object):
 
     def get_ects_distribution(self):
         distribution = dict()
-        distribution[self.name] = 0
+        count = 0
         for course in self.mandatory_courses:
             if course.selected is not None:
-                distribution[self.name] = distribution.get(self.name) + course.ects
+                count += course.ects
         for course in self.optional_courses:
             if course.selected is not None:
-                distribution[self.name] = distribution.get(self.name) + course.ects
-        count = 0
+                count += course.ects
         for group in self.groups:
-            distribution[group.name] = group.get_ects_distribution().get(group.name)
-            if group.type == 'Specialisatie':
-                count += group.get_ects_distribution().get(group.name)
-        if self.type == 'Opleiding':
-            distribution[self.name] = sum(distribution.values())
-            distribution['Verdere'] = distribution.get('Verdere') + count
+            distr = group.get_ects_distribution()
+            for name in distr:
+                count += distr[name]
+                distribution[name] = distr[name]
+        distribution[self.name] = count
         return distribution
 
     def get_min_ects(self):

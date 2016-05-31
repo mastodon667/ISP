@@ -3,6 +3,8 @@ IDP_LOCATION = 'C:/Program Files/idp 3.5.0/bin/idp.bat'
 #LOCATION = '/home/herbert/PycharmProjects/Thesis/idp/'
 LOCATION = 'C:/Users/Herbert/PycharmProjects/ISP/'
 
+import time
+
 from subprocess import Popen, PIPE
 
 
@@ -52,6 +54,10 @@ class IDPExplanation(object):
         return self.open(inp)
 
     def open(self, inp):
+        ts = time.time()
         idp = Popen(self.pwd, stdin=PIPE, stdout=PIPE)
         out, err = idp.communicate(inp)
+        te = time.time()
+        with open(LOCATION + 'reader/results.txt', 'a') as file:
+            file.write('explanation - ' + str(te - ts) + '\n')
         return out

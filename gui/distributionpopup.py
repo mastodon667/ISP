@@ -8,7 +8,7 @@ class DistributionPopup(Popup):
 
     def __init__(self, distributions, minimum, maximum):
         super(DistributionPopup, self).__init__()
-        self.title = 'Distribution'
+        self.title = 'ECTS Distributie'
         self.size_hint = (None, None)
         self.size = (500, 500)
         self.distributions = distributions

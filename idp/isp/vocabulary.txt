@@ -9,7 +9,7 @@ Verplicht(Vak,VakGroep)
 InVakGroep(Vak,VakGroep)
 InFase(Vak,Fase)
 Geselecteerd(Vak,Fase)
-NietGeselecteerd(Vak)
+GeenInteresse(Vak)
 MinAantalStudiepunten(VakGroep):Studiepunten
 MaxAantalStudiepunten(VakGroep):Studiepunten
 AantalStudiepunten(Vak):Studiepunten

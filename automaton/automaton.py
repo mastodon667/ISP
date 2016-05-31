@@ -1,3 +1,8 @@
+#LOCATION = '/home/herbert/PycharmProjects/Thesis/idp/'
+LOCATION = 'C:/Users/Herbert/PycharmProjects/ISP/'
+
+import time
+
 class Automaton(object):
 
     def __init__(self, initialState):
@@ -16,6 +21,9 @@ class Automaton(object):
         for t in state.getoTransitions():
             self.build(t.getTo())
 
+    def getAllChoices(self):
+        return self.selection
+
     def getSelection(self, key):
         return self.selection[key]
 
@@ -30,13 +38,22 @@ class Automaton(object):
         if key in self.selection:
             self.removeSelection(key)
         self.selection[key] = val
+        ts = time.time()
         for state in self.states[key]:
             state.update(val)
+        te = time.time()
+        with open(LOCATION + 'reader/results.txt', 'a') as file:
+            file.write('insertion - ' + str(te - ts) + '\n')
 
     def removeSelection(self, key):
-        del self.selection[key]
-        for state in self.states[key]:
-            state.relax()
+        if key in self.selection:
+            del self.selection[key]
+            ts = time.time()
+            for state in self.states[key]:
+                state.relax()
+            te = time.time()
+            with open(LOCATION + 'reader/results.txt', 'a') as file:
+                file.write('insertion - ' + str(te - ts) + '\n')
 
     def getInitialState(self):
         return self.initialState
@@ -47,17 +64,12 @@ class Automaton(object):
     def calculateRestorations(self):
         self.interpretations = list()
         self.restorations = set()
+        ts = time.time()
         self.develop(self.initialState, '', '')
+        te = time.time()
+        with open(LOCATION + 'reader/results.txt', 'a') as file:
+            file.write('solutions - ' + str(te - ts) + '\n')
         return self.restorations
-
-    #def showRestoration(self):
-    #    i = 1
-    #    for restoration in self.restorations:
-    #        print('Solution ' + str(i))
-    #        for key in restoration.split(' '):
-    #            print('UNDO: ' + key + ' - ' + self.selection[key])
-    #            print('------------')
-    #        i+=1
 
     def develop(self, state, e, relax):
         if state is self.finalState:
@@ -72,4 +84,9 @@ class Automaton(object):
                     self.develop(transition.getTo(), e + ' ' + h + ' - ' + transition.getVal(), relax)
 
     def isConsistent(self):
-        return self.finalState.getlCost() == 0
+        ts = time.time()
+        c = self.finalState.getlCost() == 0
+        te = time.time()
+        with open(LOCATION + 'reader/results.txt', 'a') as file:
+            file.write('sat - ' + str(te - ts) + '\n')
+        return c

@@ -12,7 +12,7 @@ class PropagationPopup(Popup):
         self.before = before
         self.choices = choices
         self.courses = courses
-        self.title = 'Do you wish to keep the following propagations?'
+        self.title = 'Wil je de propagaties behouden?'
         self.window = window
         self.size_hint = None, None
         self.size = 700, 500

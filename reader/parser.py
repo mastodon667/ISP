@@ -79,7 +79,7 @@ class Parser(object):
         strInFase = 'InFase = {'
         strInVakgroep = 'InVakGroep = {'
         strGeselecteerd = 'Geselecteerd<ct> = {'
-        strNietGeselecteerd = 'NietGeselecteerd = {'
+        strGeenInteresse = 'GeenInteresse = {'
 
         # functies
         strInSemester = 'InSemester<ct> = {'
@@ -93,7 +93,7 @@ class Parser(object):
         strInFase += opleiding.print_in_stage() + '}'
         strInVakgroep += opleiding.print_in_group() + '}'
         strGeselecteerd += opleiding.print_selected() + '}'
-        strNietGeselecteerd += opleiding.print_not_interested() + '}'
+        strGeenInteresse += opleiding.print_not_interested() + '}'
         strInSemester += opleiding.print_in_term() + '}'
         strMinAantalStudiepunten += opleiding.print_min_ects() + '}'
         strMaxAantalStudiepunten += opleiding.print_max_ects() + '}'
@@ -114,7 +114,7 @@ class Parser(object):
         s += strMaxAantalStudiepunten + '\n'
         s += strAantalStudiepunten + '\n'
         s += strGeselecteerd + '\n'
-        s += strNietGeselecteerd + '\n'
+        s += strGeenInteresse + '\n'
 
         return s
 

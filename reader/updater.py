@@ -65,6 +65,7 @@ class Updater(object):
         result = dict()
         newLine = self.filter_string(line.replace('NietGeselecteerd', ''))
         for course in newLine.split(';'):
+            course = course.lstrip().rstrip()
             if not course == '':
                 result[course] = True
         return result
@@ -73,6 +74,7 @@ class Updater(object):
         result = dict()
         newLine = self.filter_string(line.replace('Geselecteerd', ''))
         for item in newLine.split(';'):
+            item = item.lstrip().rstrip()
             if not item == '':
                 course, value = item.split(',')
                 result[course] = int(value)

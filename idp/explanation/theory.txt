@@ -10,4 +10,4 @@ satisfied(5) <=> !f[Fase] : 60 =< sum{v[Vak],s[Studiepunten] : Geselecteerd(v,f)
 !vg[VakGroep] : IsType(vg,Verdere_Specialisatie) => GeselecteerdAantalStudiepuntenPerVakGroep(vg) = sum{v[Vak], sp[Studiepunten],f[Fase], vg1[VakGroep] : (InVakGroep(v,vg) | (InVakGroep(v,vg1) & IsType(vg1,Specialisatie))) & Geselecteerd(v,f) & AantalStudiepunten(v)=sp : sp }.
 !vg[VakGroep] : IsType(vg,AVO) => GeselecteerdAantalStudiepuntenPerVakGroep(vg) = sum{v[Vak], sp[Studiepunten],f[Fase] : InVakGroep(v,vg) & Geselecteerd(v,f) & AantalStudiepunten(v)=sp : sp }.
 !vg[VakGroep] : IsType(vg,Specialisatie) | IsType(vg,Bachelor_Verbredend) => GeselecteerdAantalStudiepuntenPerVakGroep(vg) = 0.
-!v[Vak] : NietGeselecteerd(v) => ~?f[Fase] : Geselecteerd(v,f).
+!v[Vak] : GeenInteresse(v) => ~?f[Fase] : Geselecteerd(v,f).

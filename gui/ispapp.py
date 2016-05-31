@@ -14,16 +14,18 @@ class IspApp(App):
         super(IspApp, self).__init__()
         self.url = location + file
         self.accordion = Accordion()
-        self.pnlCalendar = CalendarPanel(stages, location)
+        self.location = location
+        self.stages = stages
+        self.pnlCalendar = None
 
     def build(self):
         Window.size = (1400, 800)
+        self.pnlCalendar = CalendarPanel(self.stages, self.location)
         bltAll = AllLayout()
         bltCenter = BoxLayout()
-        aciInf = AccordionItem(title='ISP Selection')
+        aciInf = AccordionItem(title='ISP Selectie')
         aciInf.add_widget(InferencePanel(self.url, self))
-        self.automaton = None
-        aciCal = AccordionItem(title='Calendar')
+        aciCal = AccordionItem(title='Lessenrooster')
         aciCal.add_widget(self.pnlCalendar)
         self.accordion.add_widget(aciInf)
         self.accordion.add_widget(aciCal)

@@ -8,7 +8,7 @@
 !vg[VakGroep] : MaxAantalStudiepunten(vg) > 0 => MinAantalStudiepunten(vg) =< GeselecteerdAantalStudiepuntenPerVakGroep(vg) =< MaxAantalStudiepunten(vg).
 !f[Fase] : 60 =< sum{v[Vak],s[Studiepunten] : Geselecteerd(v,f) & AantalStudiepunten(v)=s : s} =< 66.
 !s[Semester],f[Fase] : GeselecteerdAantalStudiepuntenPerSemester(s,f) = sum{v[Vak],sp[Studiepunten] : InSemester(v)=s & Geselecteerd(v,f) & AantalStudiepunten(v)=sp : sp}.
-!v[Vak] : NietGeselecteerd(v) => ~?f[Fase] : Geselecteerd(v,f).
+!v[Vak] : GeenInteresse(v) => ~?f[Fase] : Geselecteerd(v,f).
 GeselecteerdAantalStudiepuntenTotaal = sum{v s f : Geselecteerd(v,f) & AantalStudiepunten(v) = s : s}.
 !f[Fase] : VerschilPerFase(f) = sum{ sp[Studiepunten] : GeselecteerdAantalStudiepuntenPerSemester(Eerste,f)=sp : sp } - sum{ sp[Studiepunten] : GeselecteerdAantalStudiepuntenPerSemester(Tweede,f)=sp : sp }.
 !f[Fase] : abs(VerschilPerFase(f)) = AbsoluutVerschilPerFase(f).
