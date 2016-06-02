@@ -17,12 +17,12 @@ class DayPanel(FloatLayout):
 
     def build(self):
         for y in range(0,15):
-            self.add_widget(TimeLabel(text=str(self.date.hour)+':'+str(self.date.minute), pos_hint={'right':1.1}, y=self.y-self.height/2+(self.height/14)*y))
+            self.add_widget(TimeLabel(text=str(self.date.hour)+':'+str(self.date.minute), pos_hint={'right': .55}, y=self.y-self.height/2+(self.height/14)*y))
             self.date = self.date + timedelta(hours=1)
         with self.canvas:
             for y in range(0,15):
                 Color(1,1,1,1)
-                Line(points=(self.x,self.y+(self.height/14)*y,self.x+400,self.y+(self.height/14)*y))
+                Line(points=(self.x+100,self.y+(self.height/14)*y,self.x+500,self.y+(self.height/14)*y))
             for c in self.classes:
                 Color(1,0,0,.5)
                 self.create_block(c)
@@ -36,7 +36,7 @@ class DayPanel(FloatLayout):
         offset = t.total_seconds()/3600
         w = 100
         h = (self.height/14)*c.get_duration()
-        x = self.x
+        x = self.x+200
         y = self.y + (self.height/14)*offset
         return Rectangle(pos=(x,y), size=(w,h))
 
@@ -46,6 +46,6 @@ class DayPanel(FloatLayout):
         offset = t.total_seconds()/3600
         w = 100
         h = (self.height/14)*c.get_duration()
-        x = self.x
+        x = self.x+200
         y = self.y + (self.height/14)*offset
         return Line(rectangle=(x,y,w,h))

@@ -43,15 +43,20 @@ class CalendarPanel(BoxLayout):
         self.calendar.pos_hint = {'top': 1}
         bltLeft = BoxLayout(orientation='vertical', size_hint_x=None, width=400, spacing=30)
         bltTopLeft = BoxLayout()
-        bltBottomLeft = BoxLayout()
+        bltBottomLeft = BoxLayout(orientation='vertical')
+        bltBottomLeft.add_widget(Label(text='Fases:', size_hint_y=None, height=30))
         for cbxStage in self.boxes:
-            bltBottomLeft.add_widget(cbxStage)
+            bltStage = BoxLayout(size_hint=(None,None), size=(200,30))
+            bltStage.add_widget(Label(text=str(cbxStage.id), size_hint_y=None, height=30))
+            bltStage.add_widget(cbxStage)
+            bltBottomLeft.add_widget(bltStage)
+        bltBottomLeft.add_widget(BoxLayout())
         bltTopLeft.add_widget(self.calendar)
         bltLeft.add_widget(bltTopLeft)
         bltLeft.add_widget(bltBottomLeft)
         bltComplete.add_widget(bltLeft)
 
-        bltRight = BoxLayout(orientation='vertical', size_hint_x=None, width=400, spacing=30)
+        bltRight = BoxLayout(orientation='vertical', spacing=30)
         bltTopRight = BoxLayout(orientation='vertical')
         lblDay = Label(text='Agenda:', size_hint_y=None, height=30)
         bltTopRight.add_widget(lblDay)

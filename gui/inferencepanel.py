@@ -100,7 +100,9 @@ class InferencePanel(BoxLayout):
         if self.callback:
             for choice in choices:
                 self.update_choice(choice)
-            if self.automaton.isConsistent():
+            programme = self.build_programme()
+            if self.idp.sat(self.parser.print_domain(programme)):
+            #if self.automaton.isConsistent():
                 self.step(choices, all_old_choices, copy.deepcopy(self.automaton.getAllChoices()))
             else:
                 self.show_unsat_popup(choices)
